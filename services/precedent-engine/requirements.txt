@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+langchain
+chromadb
+pydantic
+pytest
+python-dotenv
+anthropic
