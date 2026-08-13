@@ -20,18 +20,24 @@ services:
     ports: ["8001:8001"]
     env_file: .env
     depends_on: [postgres]
+    volumes:
+      - ./shared_schemas/audit_client.py:/app/audit_client.py
 
   precedent-engine:
     build: ./services/precedent-engine
     ports: ["8002:8002"]
     env_file: .env
     depends_on: [chroma]
+    volumes:
+      - ./shared_schemas/audit_client.py:/app/audit_client.py
 
   compliance-engine:
     build: ./services/compliance-engine
     ports: ["8003:8003"]
     env_file: .env
     depends_on: [postgres]
+    volumes:
+      - ./shared_schemas/audit_client.py:/app/audit_client.py
 
   trust-access-layer:
     build: ./services/trust-access-layer
@@ -44,6 +50,8 @@ services:
     ports: ["8005:8005"]
     env_file: .env
     depends_on: [postgres, redis, eligibility-engine]
+    volumes:
+      - ./shared_schemas/audit_client.py:/app/audit_client.py
 
   gateway:
     build: ./services/gateway
