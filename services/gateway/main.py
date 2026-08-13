@@ -13,7 +13,16 @@ async def gateway(full_path: str, request: Request):
         return {"success": False, "data": None,
                 "error": {"code": "NOT_FOUND", "message": f"No route for {path}"}}
     body = await request.body()
-    async with httpx.AsyncClient() as client:
-        resp = await client.request(request.method, target, content=body,
-                                     headers=dict(request.headers), timeout=15)
-    return resp.json()
+    try:
+        async with httpx.AsyncClient() as client:
+            resp = await client.request(request.method, target, content=body,
+                                         headers=dict(request.headers), timeout=15)
+        return resp.json()
+    except httpx.ConnectError:
+        return {"success": False, "data": None,
+                "error": {"code": "SERVICE_UNAVAILABLE",
+                          "message": f"The service at {target} is not reachable right now."}}
+    except httpx.TimeoutException:
+        return {"success": False, "data": None,
+                "error": {"code": "SERVICE_TIMEOUT",
+                          "message": f"The service at {target} took too long to respond."}}
