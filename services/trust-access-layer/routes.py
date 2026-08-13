@@ -8,7 +8,7 @@ from auth import create_token, verify_password, get_current_user, require_role
 from hashing import compute_entry_hash
 from database import get_db
 from models import User, AuditLog
-from shared_schemas.enums import USER_ROLES
+USER_ROLES = ["judge", "legal_aid", "jail_officer", "admin"]
 
 # For rate limiting, we import limiter from main (we will define it there and pass it)
 # To avoid circular import, we can use request.app.state.limiter if we want, or just define it in a deps module.
