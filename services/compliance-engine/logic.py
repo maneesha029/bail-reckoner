@@ -1,16 +1,34 @@
+import json
+import os
+
+_PROCEDURAL_DATA_PATH = os.path.join(os.path.dirname(__file__), "procedural_data.json")
+_procedural_data_cache = None
+
+
+def _load_procedural_categories() -> dict:
+    global _procedural_data_cache
+    if _procedural_data_cache is None:
+        with open(_PROCEDURAL_DATA_PATH, "r", encoding="utf-8") as f:
+            _procedural_data_cache = json.load(f)["categories"]
+    return _procedural_data_cache
+
+
 def get_procedural_requirements(case_id: str, offense_category: str) -> dict:
-    # TODO: look up real requirements from the procedural_requirements table
-    # sourced from CrPC 441-450 / BNSS equivalents.
+    """Looks up the procedural checklist for offense_category from
+    procedural_data.json, compiled from CrPC 441-450 / BNSS 485-496
+    (see procedural_data.json's _meta block for the section mapping and
+    legal-review status). Falls back to the 'general' category if
+    offense_category isn't recognized, so callers always get a usable
+    checklist rather than a 500."""
+    categories = _load_procedural_categories()
+    entry = categories.get(offense_category, categories["general"])
     return {
         "case_id": case_id,
-        "bond_type": "personal_bond",
-        "estimated_fine_amount_inr": 5000,
-        "required_documents": ["Aadhaar", "Proof of residence", "Two sureties with ID proof"],
-        "procedural_steps": [
-            {"step_number": 1, "description": "File bail application with the court registry"},
-            {"step_number": 2, "description": "Submit personal bond and required documents"},
-        ],
-        "governing_sections": ["CrPC 441", "CrPC 445"],
+        "bond_type": entry["bond_type"],
+        "estimated_fine_amount_inr": entry["estimated_fine_amount_inr"],
+        "required_documents": list(entry["required_documents"]),
+        "procedural_steps": list(entry["procedural_steps"]),
+        "governing_sections": list(entry["governing_sections"]),
     }
 
 

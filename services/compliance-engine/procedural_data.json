@@ -1,0 +1,126 @@
+{
+  "_meta": {
+    "description": "Procedural requirements for filing a bail application, keyed by offense_category. Compiled from CrPC Chapter XXXIII (ss.436-450) and the corresponding BNSS 2023 chapter on bonds/bail bonds (ss.478-496), cross-referenced against the CrPC->BNSS official correspondence tables and Satender Kumar Antil v. CBI (2022) on standardising bond/surety practice.",
+    "crpc_to_bnss_section_map": {
+      "436": "478", "436A": "479", "437": "482",
+      "441": "485", "441A": "486", "442": "487", "443": "488",
+      "444": "489", "445": "490", "446": "491", "446A": "492",
+      "447": "493", "448": "494", "449": "495", "450": "496"
+    },
+    "legal_review_status": "DRAFT - compiled from secondary legal sources, not yet verified against India Code primary text. See docs/LEGAL_VALIDATION_QUESTIONS.md."
+  },
+  "categories": {
+    "general": {
+      "bond_type": "personal_bond",
+      "estimated_fine_amount_inr": 5000,
+      "required_documents": ["Aadhaar or other government-issued photo ID", "Proof of current residence", "Two sureties with ID proof (only if the court directs a surety bond)"],
+      "procedural_steps": [
+        {"step_number": 1, "description": "Confirm bail eligibility status via the eligibility-engine before drafting the application"},
+        {"step_number": 2, "description": "Draft the bail application citing the governing bond sections"},
+        {"step_number": 3, "description": "Attach identity and residence proof to the application"},
+        {"step_number": 4, "description": "File the application before the jurisdictional Magistrate/Sessions Court"},
+        {"step_number": 5, "description": "Execute the personal bond in the amount fixed by the court"},
+        {"step_number": 6, "description": "Obtain the release order and forward it to the jail superintendent"}
+      ],
+      "governing_sections": ["CrPC 441 / BNSS 485", "CrPC 445 / BNSS 490"]
+    },
+    "economic_offences": {
+      "bond_type": "surety_bond",
+      "estimated_fine_amount_inr": 20000,
+      "required_documents": ["Aadhaar or other government-issued photo ID", "Proof of current residence", "Two sureties with ID proof and proof of solvency (property or income documents)", "Bank statements or income-tax returns for the accused, where available", "Undertaking not to tamper with financial records or witnesses"],
+      "procedural_steps": [
+        {"step_number": 1, "description": "Confirm bail eligibility status via the eligibility-engine before drafting the application"},
+        {"step_number": 2, "description": "Draft the bail application addressing flight-risk and evidence-tampering conditions typical in economic-offence matters"},
+        {"step_number": 3, "description": "Assemble surety solvency documentation"},
+        {"step_number": 4, "description": "File the application before the jurisdictional Sessions Court/Special Court where applicable (e.g. PMLA Special Court)"},
+        {"step_number": 5, "description": "Execute the surety bond with sureties verified by the court"},
+        {"step_number": 6, "description": "Obtain the release order and forward it to the jail superintendent"}
+      ],
+      "governing_sections": ["CrPC 441 / BNSS 485", "CrPC 441A / BNSS 486", "CrPC 445 / BNSS 490"]
+    },
+    "crimes_against_women": {
+      "bond_type": "surety_bond",
+      "estimated_fine_amount_inr": 10000,
+      "required_documents": ["Aadhaar or other government-issued photo ID", "Proof of current residence", "Two sureties with ID proof and local address verification", "Employer certificate or proof of occupation, where available"],
+      "procedural_steps": [
+        {"step_number": 1, "description": "Confirm bail eligibility status via the eligibility-engine before drafting the application"},
+        {"step_number": 2, "description": "Draft the bail application addressing any protection/no-contact conditions the court is likely to impose"},
+        {"step_number": 3, "description": "Assemble surety and address-verification documentation"},
+        {"step_number": 4, "description": "File the application before the jurisdictional Magistrate/Sessions Court"},
+        {"step_number": 5, "description": "Execute the surety bond with sureties verified by the court"},
+        {"step_number": 6, "description": "Obtain the release order and forward it to the jail superintendent"}
+      ],
+      "governing_sections": ["CrPC 437 / BNSS 482", "CrPC 441 / BNSS 485", "CrPC 445 / BNSS 490"]
+    },
+    "crimes_against_children": {
+      "bond_type": "surety_bond",
+      "estimated_fine_amount_inr": 15000,
+      "required_documents": ["Aadhaar or other government-issued photo ID", "Proof of current residence", "Two sureties with ID proof and local address verification", "Notice compliance record where the matter is triable by a POCSO Special Court"],
+      "procedural_steps": [
+        {"step_number": 1, "description": "Confirm bail eligibility status via the eligibility-engine before drafting the application"},
+        {"step_number": 2, "description": "Draft the bail application, noting that POCSO-linked charges are heard before the designated Special Court"},
+        {"step_number": 3, "description": "Assemble surety and address-verification documentation"},
+        {"step_number": 4, "description": "File the application before the jurisdictional POCSO Special Court/Sessions Court"},
+        {"step_number": 5, "description": "Execute the surety bond with sureties verified by the court"},
+        {"step_number": 6, "description": "Obtain the release order and forward it to the jail superintendent"}
+      ],
+      "governing_sections": ["CrPC 437 / BNSS 482", "CrPC 441 / BNSS 485", "CrPC 445 / BNSS 490"]
+    },
+    "crimes_against_sc_st": {
+      "bond_type": "surety_bond",
+      "estimated_fine_amount_inr": 15000,
+      "required_documents": ["Aadhaar or other government-issued photo ID", "Proof of current residence", "Two sureties with ID proof and local address verification", "Record of compliance with any pre-arrest notice requirements under the SC/ST (Prevention of Atrocities) Act, where applicable"],
+      "procedural_steps": [
+        {"step_number": 1, "description": "Confirm bail eligibility status via the eligibility-engine before drafting the application"},
+        {"step_number": 2, "description": "Draft the bail application, noting the special-court jurisdiction and heightened bail scrutiny under the SC/ST (Prevention of Atrocities) Act"},
+        {"step_number": 3, "description": "Assemble surety and address-verification documentation"},
+        {"step_number": 4, "description": "File the application before the jurisdictional Special Court under the SC/ST (Prevention of Atrocities) Act"},
+        {"step_number": 5, "description": "Execute the surety bond with sureties verified by the court"},
+        {"step_number": 6, "description": "Obtain the release order and forward it to the jail superintendent"}
+      ],
+      "governing_sections": ["CrPC 437 / BNSS 482", "CrPC 441 / BNSS 485", "CrPC 445 / BNSS 490"]
+    },
+    "cyber_crimes": {
+      "bond_type": "surety_bond",
+      "estimated_fine_amount_inr": 10000,
+      "required_documents": ["Aadhaar or other government-issued photo ID", "Proof of current residence", "Two sureties with ID proof", "Acknowledgement of any seized-device inventory issued by the investigating cyber cell"],
+      "procedural_steps": [
+        {"step_number": 1, "description": "Confirm bail eligibility status via the eligibility-engine before drafting the application"},
+        {"step_number": 2, "description": "Draft the bail application, noting whether the charged IT Act section is bailable or non-bailable"},
+        {"step_number": 3, "description": "Assemble surety documentation and seized-device acknowledgement"},
+        {"step_number": 4, "description": "File the application before the jurisdictional Magistrate/Sessions Court (or Special Court where the case also involves another special statute)"},
+        {"step_number": 5, "description": "Execute the surety bond with sureties verified by the court"},
+        {"step_number": 6, "description": "Obtain the release order and forward it to the jail superintendent"}
+      ],
+      "governing_sections": ["CrPC 441 / BNSS 485", "CrPC 445 / BNSS 490"]
+    },
+    "offences_against_state": {
+      "bond_type": "surety_bond",
+      "estimated_fine_amount_inr": 25000,
+      "required_documents": ["Aadhaar or other government-issued photo ID", "Passport (if held) and proof of current residence", "Two sureties with ID proof and proof of property/solvency", "Employer verification or proof of settled occupation"],
+      "procedural_steps": [
+        {"step_number": 1, "description": "Confirm bail eligibility status via the eligibility-engine before drafting the application"},
+        {"step_number": 2, "description": "Draft the bail application addressing the statutory bail restrictions that apply where a special statute (e.g. UAPA s.43D(5)) governs the charge"},
+        {"step_number": 3, "description": "Assemble surety solvency and identity documentation"},
+        {"step_number": 4, "description": "File the application before the jurisdictional Special Court/Sessions Court/High Court as required by the special statute"},
+        {"step_number": 5, "description": "Execute the surety bond with sureties verified by the court"},
+        {"step_number": 6, "description": "Obtain the release order and forward it to the jail superintendent"}
+      ],
+      "governing_sections": ["CrPC 437 / BNSS 482", "CrPC 441 / BNSS 485", "CrPC 445 / BNSS 490"]
+    },
+    "crimes_against_foreigners": {
+      "bond_type": "surety_bond",
+      "estimated_fine_amount_inr": 10000,
+      "required_documents": ["Passport and visa copy", "FRRO intimation record, where applicable", "Two local sureties with ID proof", "Proof of current residence in India"],
+      "procedural_steps": [
+        {"step_number": 1, "description": "Confirm bail eligibility status via the eligibility-engine before drafting the application"},
+        {"step_number": 2, "description": "Draft the bail application including passport-surrender or travel-restriction conditions the court is likely to impose"},
+        {"step_number": 3, "description": "Assemble passport/visa and local surety documentation"},
+        {"step_number": 4, "description": "File the application before the jurisdictional Magistrate/Sessions Court"},
+        {"step_number": 5, "description": "Execute the surety bond with sureties verified by the court"},
+        {"step_number": 6, "description": "Obtain the release order and forward it to the jail superintendent, with a copy to the FRRO where applicable"}
+      ],
+      "governing_sections": ["CrPC 441 / BNSS 485", "CrPC 445 / BNSS 490"]
+    }
+  }
+}

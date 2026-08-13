@@ -11,6 +11,7 @@ class ProceduralRequirement(Base):
     bond_type = Column(String, nullable=False)
     estimated_fine_amount_inr = Column(Integer)
     required_documents = Column(String)  # comma-separated for simplicity
+    procedural_steps = Column(String)  # JSON-encoded list of {step_number, description}
     governing_sections = Column(String)
 
 
