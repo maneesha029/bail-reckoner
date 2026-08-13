@@ -14,31 +14,32 @@ router = APIRouter()
 SessionLocal = sessionmaker(bind=engine)
 
 
-# CONFIRMED with Member 1 (2026-08-13) - actual schema:
-#   case_offenses(case_id, offense_act, offense_section)
-#   offenses(act, section, offense_category, is_compoundable, max_sentence_months)
-# joined on case_offenses.offense_act = offenses.act
-#      AND case_offenses.offense_section = offenses.section
-# Where a case has multiple offenses, the one with the highest
-# max_sentence_months governs (same rule eligibility-engine's
-# binding_charge() uses - see docs/LEGAL_VALIDATION_QUESTIONS.md #1,
-# not yet legally validated).
+# NOTE (2026-08-13, corrected): the earlier version of this function
+# queried a `case_offenses` junction table, which does not exist in the
+# real schema and caused psycopg2.errors.UndefinedTable in Docker.
+#
+# Confirmed with Member 1: the actual shared schema has only `cases`
+# and `offenses` (a standalone offense-definition catalog: act, section,
+# offense_category, is_compoundable, max_sentence_months). Neither table
+# has a column linking a specific case_id to a specific offense - there
+# is currently no key to join on. This is unchanged from spec section 6,
+# which calls this "your single highest-risk integration point - talk
+# to [Member 1] directly before finalizing."
+#
+# Until Member 1 exposes a real case->offense link (e.g. a case_id
+# column on `offenses`, or a join table they own), this function only
+# confirms the case exists in `cases` and returns the safe default
+# offense_category ("general"), matching the original scaffold's
+# fallback behavior instead of guessing at a table that isn't there.
 def resolve_offense_category(case_id: str) -> str | None:
     with engine.connect() as conn:
         row = conn.execute(
-            text("""
-                SELECT o.offense_category
-                FROM case_offenses co
-                JOIN offenses o
-                  ON co.offense_act = o.act
-                 AND co.offense_section = o.section
-                WHERE co.case_id = :case_id
-                ORDER BY o.max_sentence_months DESC
-                LIMIT 1
-            """),
+            text("SELECT case_id FROM cases WHERE case_id = :case_id"),
             {"case_id": case_id},
         ).fetchone()
-    return row[0] if row else None
+    if row is None:
+        return None
+    return "general"
 
 
 def _save_procedural_requirement(offense_category: str, result: dict) -> None:
