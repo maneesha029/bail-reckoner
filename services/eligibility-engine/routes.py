@@ -1,12 +1,14 @@
 from datetime import datetime, timezone
-import os
+import time
+import uuid
+import jwt
 import requests
 
 from fastapi import APIRouter, Header, HTTPException
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm import Session, selectinload
 
-from config import DATABASE_URL, TRUST_SERVICE_URL
+from config import DATABASE_URL, TRUST_SERVICE_URL, TRUST_SERVICE_TOKEN, JWT_SECRET
 from logic import determine_eligibility
 from models import Base, CaseRecord
 from schemas import EligibilityCheckRequest, EligibilityOverrideRequest
@@ -31,22 +33,59 @@ def initialize_database():
 LAST_RESULTS: dict[str, dict] = {}
 OVERRIDES: dict[str, list[dict]] = {}
 
-
-def log_action(case_id: str, actor_user_id: str, actor_role: str,
-               action_type: str, action_payload: dict):
+def log_action(
+    case_id: str,
+    actor_user_id: str,
+    actor_role: str,
+    action_type: str,
+    action_payload: dict,
+    authorization: str | None = None,
+):
     payload = {
         "case_id": case_id,
         "actor_user_id": actor_user_id,
         "actor_role": actor_role,
         "action_type": action_type,
         "action_payload": action_payload,
-        "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
+        "timestamp": datetime.now(timezone.utc)
+        .isoformat(timespec="seconds")
+        .replace("+00:00", "Z"),
     }
+
+    token = authorization or (
+        f"Bearer {TRUST_SERVICE_TOKEN}"
+        if TRUST_SERVICE_TOKEN
+        else None
+    )
+
+    headers = {"Authorization": token} if token else {}
+
     try:
-        requests.post(f"{TRUST_SERVICE_URL}/api/v1/audit/log", json=payload, timeout=3)
+        response = requests.post(
+            f"{TRUST_SERVICE_URL}/api/v1/audit/log",
+            json=payload,
+            headers=headers,
+            timeout=3,
+        )
+
+        if response.status_code >= 400:
+            print(
+                f"[audit-log WARNING] trust service returned "
+                f"{response.status_code}: {response.text}"
+            )
     except Exception as exc:
         print(f"[audit-log WARNING] failed to log action: {exc}")
 
+def internal_audit_token() -> str:
+    return jwt.encode(
+        {
+            "user_id": str(uuid.uuid5(uuid.NAMESPACE_DNS, "eligibility-engine")),
+            "role": "admin",
+            "exp": int(time.time()) + 300,
+        },
+        JWT_SECRET,
+        algorithm="HS256",
+    )
 
 def envelope(data=None, error=None):
     return {"success": error is None, "data": data, "error": error}
@@ -83,7 +122,14 @@ def check_eligibility(payload: EligibilityCheckRequest):
         charges,
     )
     LAST_RESULTS[payload.case_id] = result
-    log_action(payload.case_id, "system", "system", "eligibility_check", result)
+    log_action(
+    payload.case_id,
+    "service-eligibility-engine",
+    "admin",
+    "eligibility_check",
+    result,
+    f'Bearer {internal_audit_token()}',
+)
     return envelope(result)
 
 
@@ -96,8 +142,10 @@ def get_eligibility(case_id: str):
 
 
 @router.post("/api/v1/eligibility/override")
-def override_eligibility(payload: EligibilityOverrideRequest,
-                         x_actor_role: str | None = Header(default=None)):
+def override_eligibility(
+    payload: EligibilityOverrideRequest,
+    x_actor_role: str | None = Header(default=None),
+    authorization: str | None = Header(default=None),):
     if x_actor_role not in {"legal_aid", "judge"}:
         raise HTTPException(status_code=403, detail="Only legal_aid or judge may override")
     if payload.case_id not in LAST_RESULTS:
@@ -110,7 +158,14 @@ def override_eligibility(payload: EligibilityOverrideRequest,
         "reviewed_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
     }
     OVERRIDES.setdefault(payload.case_id, []).append(override)
-    log_action(payload.case_id, payload.actor_user_id, x_actor_role,
-               "eligibility_override", override)
+    log_action(
+    payload.case_id,
+    payload.actor_user_id,
+    x_actor_role,
+    "manual_override",
+    override,
+    authorization,
+)
     return envelope({"computed_result": LAST_RESULTS[payload.case_id],
                      "override": override})
+
