@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Landing from "./pages/Landing";
+import Login from "./pages/Login";
 import LegalAidDashboard from "./pages/LegalAidDashboard";
 import JudgeDashboard from "./pages/JudgeDashboard";
 import UndertrialView from "./pages/UndertrialView";
@@ -32,24 +33,44 @@ function BackBar({ onBack, label }) {
 }
 
 export default function App() {
-  const [token] = useState(null);
-  const [view, setView] = useState(null); // null | "legal_aid" | "judge" | "undertrial"
+  const [token, setToken] = useState(null);
+  const [role, setRole] = useState(null);
+  const [showLogin, setShowLogin] = useState(false);
 
-  if (!view) {
-    return <Landing onSelectRole={setView} />;
+  function handleLogin({ access_token, role: authenticatedRole }) {
+    setToken(access_token);
+    setRole(authenticatedRole);
+  }
+
+  function handleSwitchRole() {
+    setToken(null);
+    setRole(null);
+    setShowLogin(false);
+  }
+
+  if (!token || !role) {
+    if (showLogin) {
+      return <Login onLogin={handleLogin} onBack={() => setShowLogin(false)} />;
+    }
+    return <Landing onSelectRole={() => setShowLogin(true)} />;
   }
 
   const views = {
     judge: { component: <JudgeDashboard token={token} />, label: "JUDICIAL AUTHORITY" },
     undertrial: { component: <UndertrialView token={token} />, label: "UNDERTRIAL" },
     legal_aid: { component: <LegalAidDashboard token={token} />, label: "LEGAL AID / JAIL OFFICER" },
+    jail_officer: { component: <LegalAidDashboard token={token} />, label: "LEGAL AID / JAIL OFFICER" },
   };
 
-  const current = views[view];
+  const current = views[role];
+
+  if (!current) {
+    return <div>Unknown role: {role}</div>;
+  }
 
   return (
     <div>
-      <BackBar onBack={() => setView(null)} label={current.label} />
+      <BackBar onBack={handleSwitchRole} label={current.label} />
       {current.component}
     </div>
   );
