@@ -30,3 +30,10 @@ Thumbs.db
 # Chroma / vector store data (if generated locally)
 chroma_data/
 *.sqlite3
+
+# Local test / setup files
+setup.sql
+postgres.zip
+pgsql/
+logfile
+services/trust-access-layer/test_http.py
