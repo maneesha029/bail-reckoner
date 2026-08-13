@@ -32,7 +32,9 @@ services:
       - ./shared_schemas/audit_client.py:/app/audit_client.py
 
   compliance-engine:
-    build: ./services/compliance-engine
+    build: 
+      context: .
+      dockerfile: ./services/compliance-engine/Dockerfile
     ports: ["8003:8003"]
     env_file: .env
     depends_on: [postgres]
