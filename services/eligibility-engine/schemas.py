@@ -1,4 +1,17 @@
 # Import shared types - do not redefine these locally.
-import sys, os
-sys.path.append(os.path.join(os.path.dirname(__file__), "..", "..", "shared_schemas"))
-from models import Case, Charge, EligibilityResult  # noqa
+from pydantic import BaseModel
+
+
+class EligibilityCheckRequest(BaseModel):
+    case_id: str
+
+
+class EligibilityOverrideRequest(BaseModel):
+    case_id: str
+    actor_user_id: str
+    reason: str
+
+
+class ErrorResponse(BaseModel):
+    code: str
+    message: str

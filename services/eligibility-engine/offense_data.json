@@ -1,0 +1,72 @@
+[
+  {
+    "act": "IPC",
+    "section": "379",
+    "offense_category": "general",
+    "is_compoundable": true,
+    "max_sentence_months": 36
+  },
+  {
+    "act": "IPC",
+    "section": "354",
+    "offense_category": "crimes_against_women",
+    "is_compoundable": false,
+    "max_sentence_months": 60
+  },
+  {
+    "act": "BNS",
+    "section": "303(2)",
+    "offense_category": "general",
+    "is_compoundable": true,
+    "max_sentence_months": 36
+  },
+  {
+    "act": "BNS",
+    "section": "74",
+    "offense_category": "crimes_against_women",
+    "is_compoundable": false,
+    "max_sentence_months": 60
+  },
+  {
+    "act": "IT_Act",
+    "section": "66",
+    "offense_category": "cyber_crimes",
+    "is_compoundable": true,
+    "max_sentence_months": 36
+  },
+  {
+    "act": "POCSO",
+    "section": "12",
+    "offense_category": "crimes_against_children",
+    "is_compoundable": false,
+    "max_sentence_months": 36
+  },
+  {
+    "act": "SC_ST_Act",
+    "section": "3(1)(r)",
+    "offense_category": "crimes_against_sc_st",
+    "is_compoundable": false,
+    "max_sentence_months": 60
+  },
+  {
+    "act": "PMLA",
+    "section": "4",
+    "offense_category": "economic_offences",
+    "is_compoundable": false,
+    "max_sentence_months": 84
+  },
+  {
+    "act": "BNS",
+    "section": "152",
+    "offense_category": "offences_against_state",
+    "is_compoundable": false,
+    "max_sentence_months": 84
+  },
+  {
+    "act": "Foreigners_Act",
+    "section": "14",
+    "offense_category": "crimes_against_foreigners",
+    "is_compoundable": false,
+    "max_sentence_months": 60
+  }
+]

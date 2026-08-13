@@ -1,36 +1,116 @@
-from fastapi import APIRouter
+from datetime import datetime, timezone
+import os
+import requests
+
+from fastapi import APIRouter, Header, HTTPException
+from sqlalchemy import create_engine, select
+from sqlalchemy.orm import Session, selectinload
+
+from config import DATABASE_URL, TRUST_SERVICE_URL
 from logic import determine_eligibility
-import sys, os
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'shared_schemas'))
-from audit_client import log_action
-from config import TRUST_SERVICE_URL
+from models import Base, CaseRecord
+from schemas import EligibilityCheckRequest, EligibilityOverrideRequest
 
 router = APIRouter()
+engine_kwargs = {"pool_pre_ping": True}
+if DATABASE_URL.startswith("postgresql"):
+    engine_kwargs["connect_args"] = {"connect_timeout": 3}
+engine = create_engine(DATABASE_URL, **engine_kwargs)
 
-# TODO: replace this in-memory placeholder with a real DB lookup by case_id
-MOCK_CASES = {}
+
+def initialize_database():
+    try:
+        Base.metadata.create_all(engine)
+    except Exception as exc:
+        # The container may start before Postgres is ready; requests will
+        # report the database error, while the process remains healthy.
+        print(f"[database WARNING] initialization failed: {exc}")
+
+# Results and overrides are intentionally kept separately: an override never
+# replaces the deterministic computed result.
+LAST_RESULTS: dict[str, dict] = {}
+OVERRIDES: dict[str, list[dict]] = {}
+
+
+def log_action(case_id: str, actor_user_id: str, actor_role: str,
+               action_type: str, action_payload: dict):
+    payload = {
+        "case_id": case_id,
+        "actor_user_id": actor_user_id,
+        "actor_role": actor_role,
+        "action_type": action_type,
+        "action_payload": action_payload,
+        "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
+    }
+    try:
+        requests.post(f"{TRUST_SERVICE_URL}/api/v1/audit/log", json=payload, timeout=3)
+    except Exception as exc:
+        print(f"[audit-log WARNING] failed to log action: {exc}")
+
+
+def envelope(data=None, error=None):
+    return {"success": error is None, "data": data, "error": error}
+
+
+def find_case(case_id: str):
+    with Session(engine) as session:
+        return session.scalar(
+            select(CaseRecord)
+            .options(selectinload(CaseRecord.offense_records))
+            .where(CaseRecord.case_id == case_id)
+        )
 
 
 @router.post("/api/v1/eligibility/check")
-def check_eligibility(payload: dict):
-    case_id = payload["case_id"]
-    case = MOCK_CASES.get(case_id, {
-        "custody_start_date": "2025-06-01", "is_first_time_offender": False,
-        "charges": [{"max_sentence_months": 24}],
-    })
-    result = determine_eligibility(case_id, case["custody_start_date"],
-                                    case["is_first_time_offender"], case["charges"])
-    log_action(TRUST_SERVICE_URL, case_id, payload.get("actor_user_id", "system"),
-               payload.get("actor_role", "system"), "eligibility_check", result)
-    return {"success": True, "data": result, "error": None}
+def check_eligibility(payload: EligibilityCheckRequest):
+    case = find_case(payload.case_id)
+    if case is None:
+        raise HTTPException(status_code=404, detail="Case not found")
+    charges = [
+        {
+            "act": offense.act,
+            "section": offense.section,
+            "offense_category": offense.offense_category,
+            "is_compoundable": offense.is_compoundable,
+            "max_sentence_months": offense.max_sentence_months,
+        }
+        for offense in case.offense_records
+    ]
+    result = determine_eligibility(
+        case.case_id,
+        case.custody_start_date.date().isoformat(),
+        bool(case.is_first_time_offender),
+        charges,
+    )
+    LAST_RESULTS[payload.case_id] = result
+    log_action(payload.case_id, "system", "system", "eligibility_check", result)
+    return envelope(result)
 
 
 @router.get("/api/v1/eligibility/{case_id}")
 def get_eligibility(case_id: str):
-    return check_eligibility({"case_id": case_id})
+    result = LAST_RESULTS.get(case_id)
+    if result is None:
+        raise HTTPException(status_code=404, detail="No computed eligibility result")
+    return envelope(result)
 
 
 @router.post("/api/v1/eligibility/override")
-def override_eligibility(payload: dict):
-    return {"success": True, "data": {"case_id": payload.get("case_id"),
-            "overridden": True, "reason": payload.get("reason")}, "error": None}
+def override_eligibility(payload: EligibilityOverrideRequest,
+                         x_actor_role: str | None = Header(default=None)):
+    if x_actor_role not in {"legal_aid", "judge"}:
+        raise HTTPException(status_code=403, detail="Only legal_aid or judge may override")
+    if payload.case_id not in LAST_RESULTS:
+        raise HTTPException(status_code=404, detail="No computed eligibility result")
+    override = {
+        "case_id": payload.case_id,
+        "actor_user_id": payload.actor_user_id,
+        "actor_role": x_actor_role,
+        "reason": payload.reason,
+        "reviewed_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
+    }
+    OVERRIDES.setdefault(payload.case_id, []).append(override)
+    log_action(payload.case_id, payload.actor_user_id, x_actor_role,
+               "eligibility_override", override)
+    return envelope({"computed_result": LAST_RESULTS[payload.case_id],
+                     "override": override})

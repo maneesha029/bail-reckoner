@@ -1,8 +1,8 @@
-from datetime import datetime, date
+from datetime import datetime, date, timedelta, timezone
 
 
 def compute_days_served(custody_start_date: str) -> int:
-    start = datetime.fromisoformat(custody_start_date).date()
+    start = date.fromisoformat(custody_start_date[:10])
     return (date.today() - start).days
 
 
@@ -22,11 +22,12 @@ def binding_charge(charges: list[dict]) -> dict:
 
 def determine_eligibility(case_id: str, custody_start_date: str,
                            is_first_time_offender: bool, charges: list[dict]) -> dict:
-    if not charges:
+    if not custody_start_date or not charges:
         return {
             "case_id": case_id, "eligibility_status": "insufficient_data",
             "days_served": 0, "days_required": 0, "threshold_rule_applied": "none",
-            "eligible_since_date": None, "computed_at": datetime.utcnow().isoformat() + "Z",
+            "eligible_since_date": None,
+            "computed_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
         }
     charge = binding_charge(charges)
     days_served = compute_days_served(custody_start_date)
@@ -34,9 +35,13 @@ def determine_eligibility(case_id: str, custody_start_date: str,
     status = "eligible_now" if days_served >= days_required else "not_yet_eligible"
     if status == "eligible_now" and rule == "one_third_first_time":
         status = "eligible_first_time_offender_rule"
+    eligible_since = None
+    if status in {"eligible_now", "eligible_first_time_offender_rule"}:
+        eligible_since = (date.today() - timedelta(days=days_served - days_required)).isoformat()
     return {
         "case_id": case_id, "eligibility_status": status,
         "days_served": days_served, "days_required": days_required,
-        "threshold_rule_applied": rule, "eligible_since_date": None,
-        "computed_at": datetime.utcnow().isoformat() + "Z",
+        "threshold_rule_applied": rule,
+        "computed_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
+        "eligible_since_date": eligible_since,
     }
