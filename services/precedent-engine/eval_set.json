@@ -1,4 +1,14 @@
 [
-  {"query": "flight risk economic offence", "expected_case": "Satender Kumar Antil v. CBI"},
-  {"query": "witness influence general bail", "expected_case": "Satender Kumar Antil v. CBI"}
+  {"query": "general bail flight risk", "expected_case": "Satender Kumar Antil v. CBI", "offense_category": "general"},
+  {"query": "witness influence general bail", "expected_case": "Satender Kumar Antil v. CBI", "offense_category": "general"},
+  {"query": "consistent arrest and bail procedure", "expected_case": "Satender Kumar Antil v. CBI", "offense_category": "general"},
+  {"query": "cyber identity theft password", "expected_case": "Information Technology Act, 2000", "offense_category": "cyber_crimes"},
+  {"query": "computer resource personation cheating", "expected_case": "Information Technology Act, 2000", "offense_category": "cyber_crimes"},
+  {"query": "electronic signature unique identification", "expected_case": "Information Technology Act, 2000", "offense_category": "cyber_crimes"},
+  {"query": "money laundering statutory offence", "expected_case": "Prevention of Money-Laundering Act, 2002", "offense_category": "economic_offences"},
+  {"query": "PMLA section 45", "expected_case": "Prevention of Money-Laundering Act, 2002", "offense_category": "economic_offences"},
+  {"query": "penetrative sexual assault child statute", "expected_case": "Protection of Children from Sexual Offences Act, 2012", "offense_category": "crimes_against_children"},
+  {"query": "POCSO section 4", "expected_case": "Protection of Children from Sexual Offences Act, 2012", "offense_category": "crimes_against_children"},
+  {"query": "Scheduled Caste public view humiliation", "expected_case": "Scheduled Castes and the Scheduled Tribes (Prevention of Atrocities) Act, 1989", "offense_category": "crimes_against_sc_st"},
+  {"query": "SC ST intentional insult intimidation", "expected_case": "Scheduled Castes and the Scheduled Tribes (Prevention of Atrocities) Act, 1989", "offense_category": "crimes_against_sc_st"}
 ]
