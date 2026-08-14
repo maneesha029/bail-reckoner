@@ -37,3 +37,4 @@ postgres.zip
 pgsql/
 logfile
 services/trust-access-layer/test_http.py
+.claude/

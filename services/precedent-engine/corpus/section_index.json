@@ -1,0 +1,58 @@
+[
+  {
+    "act": "IT_Act",
+    "section": "66C",
+    "description": "Identity theft: dishonestly or fraudulently making use of the electronic signature, password or any other unique identification feature of another person.",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/1362",
+    "source_name": "Information Technology Act, 2000 (India Code)",
+    "offense_category": "cyber_crimes"
+  },
+  {
+    "act": "IT_Act",
+    "section": "66D",
+    "description": "Cheating by personation using a computer resource or communication device.",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/1362",
+    "source_name": "Information Technology Act, 2000 (India Code)",
+    "offense_category": "cyber_crimes"
+  },
+  {
+    "act": "IT_Act",
+    "section": "67",
+    "description": "Publishing or transmitting obscene material in electronic form.",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/1362",
+    "source_name": "Information Technology Act, 2000 (India Code)",
+    "offense_category": "cyber_crimes"
+  },
+  {
+    "act": "PMLA",
+    "section": "3",
+    "description": "The offence of money-laundering as described in the Prevention of Money-Laundering Act, 2002.",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/2001",
+    "source_name": "Prevention of Money-Laundering Act, 2002 (India Code)",
+    "offense_category": "economic_offences"
+  },
+  {
+    "act": "PMLA",
+    "section": "45",
+    "description": "Statutory provisions concerning offences under the Prevention of Money-Laundering Act, 2002.",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/2001",
+    "source_name": "Prevention of Money-Laundering Act, 2002 (India Code)",
+    "offense_category": "economic_offences"
+  },
+  {
+    "act": "POCSO",
+    "section": "4",
+    "description": "Punishment for penetrative sexual assault under the Protection of Children from Sexual Offences Act, 2012.",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/2079",
+    "source_name": "Protection of Children from Sexual Offences Act, 2012 (India Code)",
+    "offense_category": "crimes_against_children"
+  },
+  {
+    "act": "SC_ST_Act",
+    "section": "3(1)(r)",
+    "description": "Intentional insult or intimidation with intent to humiliate a member of a Scheduled Caste or Scheduled Tribe in a place within public view.",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/1533",
+    "source_name": "Scheduled Castes and the Scheduled Tribes (Prevention of Atrocities) Act, 1989 (India Code)",
+    "offense_category": "crimes_against_sc_st"
+  }
+]
