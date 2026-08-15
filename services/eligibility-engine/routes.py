@@ -121,6 +121,7 @@ def check_eligibility(payload: EligibilityCheckRequest):
         bool(case.is_first_time_offender),
         charges,
     )
+    result["case_version"] = case.version
     LAST_RESULTS[payload.case_id] = result
     log_action(
     payload.case_id,
@@ -131,6 +132,33 @@ def check_eligibility(payload: EligibilityCheckRequest):
     f'Bearer {internal_audit_token()}',
 )
     return envelope(result)
+
+
+@router.get("/api/v1/eligibility/cases")
+def list_cases():
+    """
+    Real case directory, replacing the frontend's client-side mockRoster.js.
+    prisoner_id currently doubles as the display name (see seed_cases.py
+    NOTE) - a dedicated prisoner_name/photo_url column is the next step,
+    not required to make this endpoint real today.
+    """
+    with Session(engine) as session:
+        cases = session.scalars(
+            select(CaseRecord).options(selectinload(CaseRecord.offense_records))
+        ).all()
+        data = [
+            {
+                "case_id": c.case_id,
+                "name": c.prisoner_id,
+                "offense": ", ".join(
+                    f"{o.act} {o.section}" for o in c.offense_records
+                ) or "Not yet linked",
+                "case_stage": c.case_stage,
+                "is_compoundable": any(o.is_compoundable for o in c.offense_records),
+            }
+            for c in cases
+        ]
+    return envelope(data)
 
 
 @router.get("/api/v1/eligibility/{case_id}")
@@ -150,6 +178,28 @@ def override_eligibility(
         raise HTTPException(status_code=403, detail="Only legal_aid or judge may override")
     if payload.case_id not in LAST_RESULTS:
         raise HTTPException(status_code=404, detail="No computed eligibility result")
+
+    case = find_case(payload.case_id)
+    if case is None:
+        raise HTTPException(status_code=404, detail="Case not found")
+
+    if payload.expected_version is not None and payload.expected_version != case.version:
+        raise HTTPException(
+            status_code=409,
+            detail=(
+                f"Case has been modified since you loaded it "
+                f"(expected version {payload.expected_version}, current version {case.version}). "
+                f"Reload the case before recording a decision."
+            ),
+        )
+
+    with Session(engine) as session:
+        db_case = session.get(CaseRecord, payload.case_id)
+        db_case.version += 1
+        db_case.updated_at = datetime.now(timezone.utc)
+        session.commit()
+        new_version = db_case.version
+
     override = {
         "case_id": payload.case_id,
         "actor_user_id": payload.actor_user_id,
@@ -167,5 +217,5 @@ def override_eligibility(
     authorization,
 )
     return envelope({"computed_result": LAST_RESULTS[payload.case_id],
-                     "override": override})
+                     "override": override, "new_version": new_version})
 

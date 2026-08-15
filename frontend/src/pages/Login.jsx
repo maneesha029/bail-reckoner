@@ -18,12 +18,14 @@ export default function Login({ onLogin, onBack }) {
         onLogin({
           access_token: res.data.access_token,
           role: res.data.role,
+          user_id: res.data.user_id,
+          username, // trust-access-layer doesn't echo this back, so keep what was typed
         });
       } else {
         setError(res.error?.message || "Login failed");
       }
     } catch (err) {
-      setError("Could not reach the server. Please try again.");
+      setError(err.message || "Could not reach the server. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -88,6 +90,10 @@ export default function Login({ onLogin, onBack }) {
             {loading ? "SIGNING IN..." : "SIGN IN"}
           </button>
         </form>
+
+        <p style={{ marginTop: 20, fontFamily: FONTS.mono, fontSize: 11, color: TOKENS.inkSoft }}>
+          Use whichever accounts you seeded with services/trust-access-layer/seed_users.py.
+        </p>
 
         <button
           onClick={onBack}

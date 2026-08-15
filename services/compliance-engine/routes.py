@@ -1,13 +1,14 @@
 import json
 from fastapi import APIRouter
 from logic import get_procedural_requirements, check_bond_waiver
+from discretion import compute_discretion_indicators
 import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'shared_schemas'))
 from audit_client import log_action
 from config import TRUST_SERVICE_URL, engine
 from sqlalchemy import text
 from sqlalchemy.orm import sessionmaker
-from models import ProceduralRequirement, BondWaiverFlag
+from models import ProceduralRequirement, BondWaiverFlag, DiscretionAssessment
 
 router = APIRouter()
 
@@ -97,4 +98,40 @@ def bond_waiver_check(payload: dict):
     _save_bond_waiver_flag(case_id, result)
     log_action(TRUST_SERVICE_URL, case_id, payload.get("actor_user_id", "system"),
                payload.get("actor_role", "system"), "bond_waiver_check", result)
+    return {"success": True, "data": result, "error": None}
+
+
+def _save_discretion_assessment(case_id: str, result: dict) -> None:
+    db = SessionLocal()
+    try:
+        row = db.get(DiscretionAssessment, case_id)
+        if row is None:
+            row = DiscretionAssessment(case_id=case_id)
+            db.add(row)
+        row.flight_risk_band = result["flight_risk"]["band"]
+        row.flight_risk_score = result["flight_risk"]["score"]
+        row.witness_influence_band = result["witness_influence_risk"]["band"]
+        row.witness_influence_score = result["witness_influence_risk"]["score"]
+        row.factors_present = ", ".join(
+            result["flight_risk"]["factors_present"]
+            + result["witness_influence_risk"]["factors_present"]
+        )
+        db.commit()
+    finally:
+        db.close()
+
+
+@router.post("/api/v1/discretion/assess")
+def discretion_assess(payload: dict):
+    """
+    Rule-based flight-risk / witness-influence indicators for the judge's
+    consideration (CrPC/BNSS discretion factors). Advisory only - see
+    discretion.py's docstring and the disclaimer returned in every response.
+    """
+    case_id = payload["case_id"]
+    indicators = payload.get("indicators", {})
+    result = compute_discretion_indicators(case_id, indicators)
+    _save_discretion_assessment(case_id, result)
+    log_action(TRUST_SERVICE_URL, case_id, payload.get("actor_user_id", "system"),
+               payload.get("actor_role", "system"), "discretion_assessment", result)
     return {"success": True, "data": result, "error": None}

@@ -30,6 +30,7 @@ services:
     depends_on: [chroma]
     volumes:
       - ./shared_schemas/audit_client.py:/app/audit_client.py
+      - ./shared_schemas/models.py:/app/models.py
 
   compliance-engine:
     build: 
@@ -52,6 +53,14 @@ services:
     ports: ["8005:8005"]
     env_file: .env
     depends_on: [postgres, redis, eligibility-engine]
+    volumes:
+      - ./shared_schemas/audit_client.py:/app/audit_client.py
+
+  monitoring-scheduler:
+    build: ./services/monitoring-engine
+    command: celery -A celery_app worker --beat --loglevel=info
+    env_file: .env
+    depends_on: [postgres, redis, eligibility-engine, monitoring-engine]
     volumes:
       - ./shared_schemas/audit_client.py:/app/audit_client.py
 

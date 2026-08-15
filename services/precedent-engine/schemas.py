@@ -6,14 +6,11 @@ from typing import Any
 
 from pydantic import BaseModel, Field, validator
 
-try:
-    from shared_schemas.models import PrecedentCitation, PrecedentResult
-except ModuleNotFoundError:  # Running directly from this service directory.
-    import sys
-    from pathlib import Path
-
-    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-    from shared_schemas.models import PrecedentCitation, PrecedentResult
+# FIX: same root cause as routes.py - docker-compose mounts individual
+# shared_schemas files flat into /app, not as a `shared_schemas` package.
+# This needs models.py mounted too (see docker-compose-patch.txt) and
+# imported flat, matching how audit_client.py is already imported.
+from models import PrecedentCitation, PrecedentResult
 
 
 OFFENSE_CATEGORIES = {

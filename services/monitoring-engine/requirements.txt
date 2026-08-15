@@ -9,3 +9,5 @@ pytest
 python-dotenv
 requests
 pandas
+
+PyJWT

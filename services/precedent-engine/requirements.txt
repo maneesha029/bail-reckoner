@@ -6,3 +6,5 @@ pydantic
 pytest
 python-dotenv
 anthropic
+
+PyJWT

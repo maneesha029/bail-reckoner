@@ -5,13 +5,18 @@ from datetime import datetime, timezone
 
 from fastapi import APIRouter
 
-try:
-    from shared_schemas.audit_client import log_action
-except ModuleNotFoundError:
-    import sys
-    from pathlib import Path
-    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-    from shared_schemas.audit_client import log_action
+# FIX: docker-compose mounts shared_schemas/audit_client.py as a single
+# flat file at /app/audit_client.py (see the `volumes:` entry for this
+# service) - there is no `shared_schemas` PACKAGE inside this container,
+# only that one file sitting next to routes.py. The old
+# `from shared_schemas.audit_client import log_action` therefore always
+# failed with ModuleNotFoundError, and the fallback
+# `parents[2]` path-walk assumed a directory depth that only exists on
+# your local machine, not inside the container - so it crashed with
+# IndexError instead, and this whole service never started.
+# compliance-engine and monitoring-engine already do it this simpler way -
+# this brings precedent-engine in line with them.
+from audit_client import log_action
 
 from config import TRUST_SERVICE_URL
 from logic import search_precedent, summarize_case

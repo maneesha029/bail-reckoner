@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 import uuid
 
 from auth import create_token, verify_password, get_current_user, require_role
-from hashing import compute_entry_hash
+from hashing import compute_entry_hash, verify_chain
 from database import get_db
 from models import User, AuditLog
 USER_ROLES = ["judge", "legal_aid", "jail_officer", "admin"]
@@ -58,7 +58,7 @@ def audit_log(payload: dict, db: Session = Depends(get_db), current_user: dict =
         timestamp = datetime.now(timezone.utc).replace(tzinfo=None).strftime("%Y-%m-%dT%H:%M:%S.%f") + "Z"
         
         action_type = payload.get("action_type")
-        valid_actions = ["eligibility_check", "precedent_search", "procedural_check", "bond_waiver_check", "alert_sent", "manual_override"]
+        valid_actions = ["eligibility_check", "precedent_search", "procedural_check", "bond_waiver_check", "discretion_assessment", "alert_sent", "manual_override"]
         if action_type not in valid_actions:
             return {"success": False, "data": None, "error": {"code": "INVALID_ACTION", "message": "Invalid action_type"}}
         
@@ -110,3 +110,48 @@ def get_audit_logs(case_id: str, db: Session = Depends(get_db), current_user: di
             "previous_hash": log.previous_hash
         })
     return {"success": True, "data": data, "error": None}
+
+
+@router.get("/api/v1/audit/verify")
+def verify_audit_chain(db: Session = Depends(get_db),
+                        current_user: dict = Depends(require_role(USER_ROLES))):
+    """
+    Walks the ENTIRE audit log in chronological order and recomputes each
+    entry's hash from its content + the previous entry's hash, comparing
+    against what's stored. Returns is_valid=False and the exact break point
+    the moment any row's content no longer matches its recorded hash -
+    proof the chain is tamper-evident, not just a claim.
+    """
+    logs = db.query(AuditLog).order_by(AuditLog.timestamp.asc()).all()
+    entries = [{
+        "log_id": str(log.log_id),
+        "case_id": log.case_id,
+        "actor_user_id": str(log.actor_user_id),
+        "actor_role": log.actor_role,
+        "action_type": log.action_type,
+        "action_payload": log.action_payload,
+        "timestamp": log.timestamp.strftime("%Y-%m-%dT%H:%M:%S.%f") + "Z" if log.timestamp else None,
+        "entry_hash": log.entry_hash,
+        "previous_hash": log.previous_hash,
+    } for log in logs]
+
+    prev = "0" * 64
+    for i, entry in enumerate(entries):
+        expected = compute_entry_hash(entry, prev)
+        if expected != entry.get("entry_hash"):
+            return {"success": True, "data": {
+                "is_valid": False,
+                "entries_checked": i + 1,
+                "total_entries": len(entries),
+                "break_at_log_id": entry["log_id"],
+                "break_at_index": i,
+            }, "error": None}
+        prev = entry.get("entry_hash")
+
+    return {"success": True, "data": {
+        "is_valid": True,
+        "entries_checked": len(entries),
+        "total_entries": len(entries),
+        "break_at_log_id": None,
+        "break_at_index": None,
+    }, "error": None}

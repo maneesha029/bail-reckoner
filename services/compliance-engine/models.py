@@ -21,3 +21,13 @@ class BondWaiverFlag(Base):
     is_flagged = Column(Boolean, default=False)
     confidence = Column(String)
     reasoning = Column(String)
+
+
+class DiscretionAssessment(Base):
+    __tablename__ = "discretion_assessments"
+    case_id = Column(String, primary_key=True)
+    flight_risk_band = Column(String, nullable=False)
+    flight_risk_score = Column(Integer, nullable=False)
+    witness_influence_band = Column(String, nullable=False)
+    witness_influence_score = Column(Integer, nullable=False)
+    factors_present = Column(String)  # comma-separated, both categories combined

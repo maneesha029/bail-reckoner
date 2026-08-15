@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import re
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeoutError
 from pathlib import Path
 from typing import Any
 
@@ -151,4 +152,19 @@ def _chroma_search(query: str, category: str, factors: list[str], top_k: int) ->
 
 def find_relevant_documents(category: str, factors: list[str], top_k: int = 4) -> list[dict[str, Any]]:
     query = " ".join([category, *factors])
-    return _chroma_search(query, category, factors, top_k) or _lexical_search(query, category, factors, top_k)
+    # Chroma gets a hard 3s budget. If it's slow to start, unreachable, or
+    # hangs mid-connection, we fail fast and fall back to the deterministic
+    # lexical index instead of blocking until the gateway's own 15s
+    # timeout - a slow Chroma should degrade the demo, not break it.
+    # shutdown(wait=False) is deliberate: if the Chroma call is genuinely
+    # stuck, we abandon waiting on it rather than let a `with` block's
+    # implicit shutdown(wait=True) block on the same stuck thread.
+    pool = ThreadPoolExecutor(max_workers=1)
+    future = pool.submit(_chroma_search, query, category, factors, top_k)
+    try:
+        result = future.result(timeout=3)
+    except (FutureTimeoutError, Exception):
+        result = None
+    finally:
+        pool.shutdown(wait=False)
+    return result or _lexical_search(query, category, factors, top_k)

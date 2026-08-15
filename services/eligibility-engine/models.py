@@ -40,6 +40,7 @@ class CaseRecord(Base):
     case_stage = Column(String, default="under_trial")
     has_legal_aid = Column(Boolean, default=False)
     charges = Column(JSON, nullable=False, default=list)
+    version = Column(Integer, nullable=False, default=0)
     created_at = Column(DateTime, nullable=False)
     updated_at = Column(DateTime, nullable=False)
 
