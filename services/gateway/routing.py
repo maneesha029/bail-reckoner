@@ -6,7 +6,6 @@ ROUTE_MAP = {
     "/api/v1/precedent": PRECEDENT_SERVICE_URL,
     "/api/v1/procedural": COMPLIANCE_SERVICE_URL,
     "/api/v1/bond-waiver": COMPLIANCE_SERVICE_URL,
-    "/api/v1/discretion": COMPLIANCE_SERVICE_URL,
     "/api/v1/auth": TRUST_SERVICE_URL,
     "/api/v1/audit": TRUST_SERVICE_URL,
     "/api/v1/alerts": MONITORING_SERVICE_URL,

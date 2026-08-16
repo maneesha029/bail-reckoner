@@ -1,28 +1,8 @@
 from fastapi import FastAPI, Request
-from fastapi.middleware.cors import CORSMiddleware
 import httpx
 from routing import resolve_target
-from auth_middleware import JWTAuthMiddleware
 
 app = FastAPI(title="Bail Reckoner API Gateway")
-
-# Order matters: Starlette runs middlewares in reverse of add order, so
-# the LAST one added runs FIRST. We add auth last so CORS runs first -
-# that way even a 401 from auth still carries CORS headers, and the
-# browser shows you the real 401 instead of a confusing CORS error.
-app.add_middleware(JWTAuthMiddleware)
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-
-@app.get("/health")
-async def health():
-    return {"success": True, "data": {"status": "ok"}, "error": None}
 
 
 @app.api_route("/api/v1/{full_path:path}", methods=["GET", "POST", "PUT", "DELETE"])
@@ -33,16 +13,7 @@ async def gateway(full_path: str, request: Request):
         return {"success": False, "data": None,
                 "error": {"code": "NOT_FOUND", "message": f"No route for {path}"}}
     body = await request.body()
-    try:
-        async with httpx.AsyncClient() as client:
-            resp = await client.request(request.method, target, content=body,
-                                         headers=dict(request.headers), timeout=15)
-        return resp.json()
-    except httpx.ConnectError:
-        return {"success": False, "data": None,
-                "error": {"code": "SERVICE_UNAVAILABLE",
-                          "message": f"The service at {target} is not reachable right now."}}
-    except httpx.TimeoutException:
-        return {"success": False, "data": None,
-                "error": {"code": "SERVICE_TIMEOUT",
-                          "message": f"The service at {target} took too long to respond."}}
+    async with httpx.AsyncClient() as client:
+        resp = await client.request(request.method, target, content=body,
+                                     headers=dict(request.headers), timeout=15)
+    return resp.json()

@@ -1,0 +1,2426 @@
+[
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "7951fb1b-3a85-43c7-9019-bc4ef058d73f",
+    "prisoner_id": "PRIS-2026-00001",
+    "charges": [
+      {
+        "act": "POCSO",
+        "section": "3",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2024-08-17",
+    "is_first_time_offender": false,
+    "state": "Maharashtra",
+    "district": "Aurangabad",
+    "case_stage": "bail_applied",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "e6b6449b-22d4-41e8-a107-c05f925588ed",
+    "prisoner_id": "PRIS-2026-00002",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "406",
+        "offense_category": "economic_offences",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      },
+      {
+        "act": "POCSO",
+        "section": "4",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2024-11-02",
+    "is_first_time_offender": false,
+    "state": "Uttar Pradesh",
+    "district": "Kanpur",
+    "case_stage": "bail_applied",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "2e34ff76-7338-4aa8-a98d-140017e201b3",
+    "prisoner_id": "PRIS-2026-00003",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      },
+      {
+        "act": "SC_ST_Act",
+        "section": "4",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 72
+      }
+    ],
+    "custody_start_date": "2025-06-26",
+    "is_first_time_offender": true,
+    "state": "West Bengal",
+    "district": "Howrah",
+    "case_stage": "bail_granted",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "0c511124-1ee7-490d-97ae-df71495d18ba",
+    "prisoner_id": "PRIS-2026-00004",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "406",
+        "offense_category": "economic_offences",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2025-12-29",
+    "is_first_time_offender": true,
+    "state": "Maharashtra",
+    "district": "Pune",
+    "case_stage": "bail_granted",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "bf69ae86-ef1e-434c-86a5-aa738cc7b3fd",
+    "prisoner_id": "PRIS-2026-00005",
+    "charges": [
+      {
+        "act": "IT_Act",
+        "section": "66E",
+        "offense_category": "cyber_crimes",
+        "is_compoundable": false,
+        "max_sentence_months": 24
+      }
+    ],
+    "custody_start_date": "2024-03-14",
+    "is_first_time_offender": true,
+    "state": "Delhi",
+    "district": "North Delhi",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "363aaca8-5026-4297-a758-20674b07562e",
+    "prisoner_id": "PRIS-2026-00006",
+    "charges": [
+      {
+        "act": "POCSO",
+        "section": "4",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2026-06-06",
+    "is_first_time_offender": true,
+    "state": "West Bengal",
+    "district": "Kolkata",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "f8f4df84-2521-4e10-9fce-15e858c8cd19",
+    "prisoner_id": "PRIS-2026-00007",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      },
+      {
+        "act": "IPC",
+        "section": "336",
+        "offense_category": "general",
+        "is_compoundable": true,
+        "max_sentence_months": 12
+      }
+    ],
+    "custody_start_date": "2026-06-18",
+    "is_first_time_offender": true,
+    "state": "West Bengal",
+    "district": "Jalpaiguri",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "97ae4ce0-8dc2-4121-8a3a-0bd32c5b5f29",
+    "prisoner_id": "PRIS-2026-00008",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "336",
+        "offense_category": "general",
+        "is_compoundable": true,
+        "max_sentence_months": 12
+      }
+    ],
+    "custody_start_date": "2025-12-25",
+    "is_first_time_offender": false,
+    "state": "Rajasthan",
+    "district": "Kota",
+    "case_stage": "bail_granted",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "baba132f-31c7-4ba3-ab43-c69b92f32192",
+    "prisoner_id": "PRIS-2026-00009",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "336",
+        "offense_category": "general",
+        "is_compoundable": true,
+        "max_sentence_months": 12
+      }
+    ],
+    "custody_start_date": "2025-01-21",
+    "is_first_time_offender": true,
+    "state": "Gujarat",
+    "district": "Surat",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "2e865f66-2164-43e3-bc10-11c10fece715",
+    "prisoner_id": "PRIS-2026-00010",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      },
+      {
+        "act": "IPC",
+        "section": "307",
+        "offense_category": "general",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2026-02-27",
+    "is_first_time_offender": true,
+    "state": "Tamil Nadu",
+    "district": "Chennai",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "aff78029-3cd2-499d-8246-d4655a2d30ba",
+    "prisoner_id": "PRIS-2026-00011",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2026-01-09",
+    "is_first_time_offender": true,
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "463f7c6b-1c22-4e53-93c5-72977c638e93",
+    "prisoner_id": "PRIS-2026-00012",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2025-12-27",
+    "is_first_time_offender": false,
+    "state": "Madhya Pradesh",
+    "district": "Indore",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "921ec7c7-4f06-4638-ba11-db960d9dfbd4",
+    "prisoner_id": "PRIS-2026-00013",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      },
+      {
+        "act": "IPC",
+        "section": "336",
+        "offense_category": "general",
+        "is_compoundable": true,
+        "max_sentence_months": 12
+      }
+    ],
+    "custody_start_date": "2025-02-06",
+    "is_first_time_offender": true,
+    "state": "Uttar Pradesh",
+    "district": "Agra",
+    "case_stage": "bail_granted",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "4d2f1895-791a-4893-84f2-60b7e0aeedfb",
+    "prisoner_id": "PRIS-2026-00014",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "406",
+        "offense_category": "economic_offences",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2024-09-29",
+    "is_first_time_offender": true,
+    "state": "Karnataka",
+    "district": "Bengaluru",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "78262872-a1f2-46ab-bd5d-b15ce7215af3",
+    "prisoner_id": "PRIS-2026-00015",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "307",
+        "offense_category": "general",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2024-09-14",
+    "is_first_time_offender": true,
+    "state": "Delhi",
+    "district": "New Delhi",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "51b29f1f-7ff7-46e2-b51e-fd2a06226910",
+    "prisoner_id": "PRIS-2026-00016",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "153A",
+        "offense_category": "offences_against_state",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2022-12-12",
+    "is_first_time_offender": false,
+    "state": "West Bengal",
+    "district": "Kolkata",
+    "case_stage": "bail_granted",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "5a82b2f5-712c-424a-8aab-bf7e79565037",
+    "prisoner_id": "PRIS-2026-00017",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2024-12-03",
+    "is_first_time_offender": true,
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "case_stage": "bail_applied",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "10a58e3b-328e-4ba2-be18-1961ad46b875",
+    "prisoner_id": "PRIS-2026-00018",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2024-12-23",
+    "is_first_time_offender": false,
+    "state": "Punjab",
+    "district": "Jalandhar",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "43c8399b-8204-4542-b4bc-ddb1f9465f81",
+    "prisoner_id": "PRIS-2026-00019",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "336",
+        "offense_category": "general",
+        "is_compoundable": true,
+        "max_sentence_months": 12
+      }
+    ],
+    "custody_start_date": "2026-02-09",
+    "is_first_time_offender": true,
+    "state": "Haryana",
+    "district": "Hisar",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "dc77b824-d788-4712-83ba-6d20cfd253d4",
+    "prisoner_id": "PRIS-2026-00020",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2025-11-01",
+    "is_first_time_offender": true,
+    "state": "Delhi",
+    "district": "New Delhi",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "0f5fba50-b404-4a8c-b9b1-4c507ff2347e",
+    "prisoner_id": "PRIS-2026-00021",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2026-03-27",
+    "is_first_time_offender": false,
+    "state": "Karnataka",
+    "district": "Mysuru",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "afc725da-33d4-4499-a156-c6447e60233c",
+    "prisoner_id": "PRIS-2026-00022",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2025-05-25",
+    "is_first_time_offender": false,
+    "state": "Telangana",
+    "district": "Hyderabad",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "8a7d923e-4a95-45cc-935b-d0cd1fcb8a0b",
+    "prisoner_id": "PRIS-2026-00023",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "336",
+        "offense_category": "general",
+        "is_compoundable": true,
+        "max_sentence_months": 12
+      },
+      {
+        "act": "IPC",
+        "section": "376",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2024-08-19",
+    "is_first_time_offender": true,
+    "state": "Uttar Pradesh",
+    "district": "Agra",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "abeb9623-c0bc-467e-9e9d-b8092e6d938e",
+    "prisoner_id": "PRIS-2026-00024",
+    "charges": [
+      {
+        "act": "POCSO",
+        "section": "4",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2024-09-17",
+    "is_first_time_offender": true,
+    "state": "Telangana",
+    "district": "Hyderabad",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "bbb9c2cc-df9c-4642-9a90-57e33b34177a",
+    "prisoner_id": "PRIS-2026-00025",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "336",
+        "offense_category": "general",
+        "is_compoundable": true,
+        "max_sentence_months": 12
+      }
+    ],
+    "custody_start_date": "2024-09-10",
+    "is_first_time_offender": true,
+    "state": "Tamil Nadu",
+    "district": "Coimbatore",
+    "case_stage": "bail_granted",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "e5ff688e-ee73-402a-8028-912c19665a8f",
+    "prisoner_id": "PRIS-2026-00026",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "420",
+        "offense_category": "economic_offences",
+        "is_compoundable": false,
+        "max_sentence_months": 84
+      }
+    ],
+    "custody_start_date": "2025-02-27",
+    "is_first_time_offender": true,
+    "state": "Karnataka",
+    "district": "Tumkur",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "9b4325c9-a78d-4198-b29b-aa9cb502ae90",
+    "prisoner_id": "PRIS-2026-00027",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "498A",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": true,
+        "max_sentence_months": 36
+      },
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2026-06-18",
+    "is_first_time_offender": true,
+    "state": "Karnataka",
+    "district": "Kolar",
+    "case_stage": "bail_applied",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "73515f4e-26ee-40ae-972e-ef11f811a328",
+    "prisoner_id": "PRIS-2026-00028",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "376",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2024-10-25",
+    "is_first_time_offender": true,
+    "state": "Gujarat",
+    "district": "Ahmedabad",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "1c551ff3-abd6-4312-a2f3-fa2f5b676a25",
+    "prisoner_id": "PRIS-2026-00029",
+    "charges": [
+      {
+        "act": "SC_ST_Act",
+        "section": "3",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2026-04-14",
+    "is_first_time_offender": false,
+    "state": "Karnataka",
+    "district": "Mysuru",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "d8e2fede-a65b-4c81-a18f-6554b903e1c2",
+    "prisoner_id": "PRIS-2026-00030",
+    "charges": [
+      {
+        "act": "IT_Act",
+        "section": "66E",
+        "offense_category": "cyber_crimes",
+        "is_compoundable": false,
+        "max_sentence_months": 24
+      }
+    ],
+    "custody_start_date": "2025-08-17",
+    "is_first_time_offender": true,
+    "state": "Uttar Pradesh",
+    "district": "Varanasi",
+    "case_stage": "bail_applied",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "0282fdfa-7c48-4c31-867f-d1b180ca07ad",
+    "prisoner_id": "PRIS-2026-00031",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "121",
+        "offense_category": "offences_against_state",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2025-10-24",
+    "is_first_time_offender": true,
+    "state": "Karnataka",
+    "district": "Kolar",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "8d55b132-2e6a-40b1-bc13-e0881fa233eb",
+    "prisoner_id": "PRIS-2026-00032",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "420",
+        "offense_category": "economic_offences",
+        "is_compoundable": false,
+        "max_sentence_months": 84
+      },
+      {
+        "act": "POCSO",
+        "section": "4",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2023-04-10",
+    "is_first_time_offender": true,
+    "state": "Uttar Pradesh",
+    "district": "Lucknow",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "cfe9ee8a-628e-4066-b03e-793026d2d787",
+    "prisoner_id": "PRIS-2026-00033",
+    "charges": [
+      {
+        "act": "POCSO",
+        "section": "3",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2024-08-01",
+    "is_first_time_offender": true,
+    "state": "Tamil Nadu",
+    "district": "Chennai",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "b272c10c-af77-4e8f-9e80-3d8660859b31",
+    "prisoner_id": "PRIS-2026-00034",
+    "charges": [
+      {
+        "act": "POCSO",
+        "section": "3",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      },
+      {
+        "act": "IPC",
+        "section": "307",
+        "offense_category": "general",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2026-03-15",
+    "is_first_time_offender": true,
+    "state": "West Bengal",
+    "district": "Kolkata",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "090b78c9-3d3f-4598-9650-ef0014bbb86a",
+    "prisoner_id": "PRIS-2026-00035",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "153A",
+        "offense_category": "offences_against_state",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2025-11-20",
+    "is_first_time_offender": true,
+    "state": "Gujarat",
+    "district": "Surat",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "18fd17df-0d26-42f7-bb57-885d86daf01e",
+    "prisoner_id": "PRIS-2026-00036",
+    "charges": [
+      {
+        "act": "IT_Act",
+        "section": "66C",
+        "offense_category": "cyber_crimes",
+        "is_compoundable": false,
+        "max_sentence_months": 24
+      }
+    ],
+    "custody_start_date": "2026-07-14",
+    "is_first_time_offender": false,
+    "state": "West Bengal",
+    "district": "Howrah",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "7d027edc-3c1c-4331-bc15-408bace7a2b4",
+    "prisoner_id": "PRIS-2026-00037",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "121",
+        "offense_category": "offences_against_state",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      },
+      {
+        "act": "POCSO",
+        "section": "3",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2023-04-17",
+    "is_first_time_offender": false,
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "d6d4ff19-4b4a-4d27-b746-cd85f5c98861",
+    "prisoner_id": "PRIS-2026-00038",
+    "charges": [
+      {
+        "act": "POCSO",
+        "section": "4",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2025-08-17",
+    "is_first_time_offender": true,
+    "state": "Madhya Pradesh",
+    "district": "Jabalpur",
+    "case_stage": "bail_applied",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "341033e2-d81a-4d06-a5ba-1177ad37bdc2",
+    "prisoner_id": "PRIS-2026-00039",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "376",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2022-11-10",
+    "is_first_time_offender": true,
+    "state": "Tamil Nadu",
+    "district": "Coimbatore",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "f02d1977-8e23-4b29-8a6a-d5831d21d482",
+    "prisoner_id": "PRIS-2026-00040",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "498A",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": true,
+        "max_sentence_months": 36
+      },
+      {
+        "act": "IPC",
+        "section": "406",
+        "offense_category": "economic_offences",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2024-03-27",
+    "is_first_time_offender": true,
+    "state": "Karnataka",
+    "district": "Kolar",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "41746f92-c3fb-4b17-bd6b-4ad2f19fa9b1",
+    "prisoner_id": "PRIS-2026-00041",
+    "charges": [
+      {
+        "act": "SC_ST_Act",
+        "section": "3",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2023-06-10",
+    "is_first_time_offender": false,
+    "state": "Karnataka",
+    "district": "Mysuru",
+    "case_stage": "bail_applied",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "77f69bed-0321-4731-a9aa-1189e1b11cf5",
+    "prisoner_id": "PRIS-2026-00042",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      },
+      {
+        "act": "IPC",
+        "section": "498A",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": true,
+        "max_sentence_months": 36
+      }
+    ],
+    "custody_start_date": "2026-02-21",
+    "is_first_time_offender": true,
+    "state": "Telangana",
+    "district": "Nizamabad",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "bef9bd48-282e-45ec-b7a6-441854b5970c",
+    "prisoner_id": "PRIS-2026-00043",
+    "charges": [
+      {
+        "act": "POCSO",
+        "section": "3",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      },
+      {
+        "act": "IPC",
+        "section": "336",
+        "offense_category": "general",
+        "is_compoundable": true,
+        "max_sentence_months": 12
+      }
+    ],
+    "custody_start_date": "2026-03-02",
+    "is_first_time_offender": true,
+    "state": "West Bengal",
+    "district": "Kolkata",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "01bb2d1f-78b4-4599-8a38-c36a2f7848c9",
+    "prisoner_id": "PRIS-2026-00044",
+    "charges": [
+      {
+        "act": "SC_ST_Act",
+        "section": "3",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2026-07-27",
+    "is_first_time_offender": true,
+    "state": "Madhya Pradesh",
+    "district": "Jabalpur",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "00c9e35f-5373-4b58-bf29-dcb8a61d9419",
+    "prisoner_id": "PRIS-2026-00045",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "336",
+        "offense_category": "general",
+        "is_compoundable": true,
+        "max_sentence_months": 12
+      }
+    ],
+    "custody_start_date": "2024-12-06",
+    "is_first_time_offender": true,
+    "state": "Madhya Pradesh",
+    "district": "Bhopal",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "2c096d67-5cb7-46ca-a8b1-d46ac4e70fda",
+    "prisoner_id": "PRIS-2026-00046",
+    "charges": [
+      {
+        "act": "POCSO",
+        "section": "4",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2026-01-30",
+    "is_first_time_offender": true,
+    "state": "Rajasthan",
+    "district": "Kota",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "33b0e4b3-def9-470a-9ab7-47b627491fa0",
+    "prisoner_id": "PRIS-2026-00047",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "498A",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": true,
+        "max_sentence_months": 36
+      },
+      {
+        "act": "POCSO",
+        "section": "3",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2026-07-18",
+    "is_first_time_offender": true,
+    "state": "Karnataka",
+    "district": "Bengaluru",
+    "case_stage": "bail_applied",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "a9ff04e6-1388-431e-acc8-8d50e30e528d",
+    "prisoner_id": "PRIS-2026-00048",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "121",
+        "offense_category": "offences_against_state",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      },
+      {
+        "act": "IPC",
+        "section": "307",
+        "offense_category": "general",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2025-01-01",
+    "is_first_time_offender": true,
+    "state": "Madhya Pradesh",
+    "district": "Bhopal",
+    "case_stage": "bail_applied",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "71ffc67e-bb52-4167-a492-82aa8649101e",
+    "prisoner_id": "PRIS-2026-00049",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "307",
+        "offense_category": "general",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2025-03-11",
+    "is_first_time_offender": false,
+    "state": "Delhi",
+    "district": "New Delhi",
+    "case_stage": "bail_granted",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "56b4a869-3555-425d-a949-d18da9865afa",
+    "prisoner_id": "PRIS-2026-00050",
+    "charges": [
+      {
+        "act": "POCSO",
+        "section": "4",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2026-04-17",
+    "is_first_time_offender": false,
+    "state": "Telangana",
+    "district": "Hyderabad",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "895cdf29-91c4-4fc1-8d54-23c7337a6985",
+    "prisoner_id": "PRIS-2026-00051",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "420",
+        "offense_category": "economic_offences",
+        "is_compoundable": false,
+        "max_sentence_months": 84
+      }
+    ],
+    "custody_start_date": "2025-04-04",
+    "is_first_time_offender": false,
+    "state": "Tamil Nadu",
+    "district": "Salem",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "74e57145-72b4-48b3-83bd-80e89683be94",
+    "prisoner_id": "PRIS-2026-00052",
+    "charges": [
+      {
+        "act": "IT_Act",
+        "section": "66D",
+        "offense_category": "cyber_crimes",
+        "is_compoundable": false,
+        "max_sentence_months": 36
+      }
+    ],
+    "custody_start_date": "2026-05-18",
+    "is_first_time_offender": false,
+    "state": "Karnataka",
+    "district": "Tumkur",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "f5019f90-43af-4203-a321-2b428e5061c6",
+    "prisoner_id": "PRIS-2026-00053",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "153A",
+        "offense_category": "offences_against_state",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      },
+      {
+        "act": "SC_ST_Act",
+        "section": "4",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 72
+      }
+    ],
+    "custody_start_date": "2026-07-19",
+    "is_first_time_offender": true,
+    "state": "Karnataka",
+    "district": "Bengaluru",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "d50f2994-13c2-4cd8-a8b9-bc8dc23e8972",
+    "prisoner_id": "PRIS-2026-00054",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "153A",
+        "offense_category": "offences_against_state",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      },
+      {
+        "act": "IT_Act",
+        "section": "66C",
+        "offense_category": "cyber_crimes",
+        "is_compoundable": false,
+        "max_sentence_months": 24
+      }
+    ],
+    "custody_start_date": "2025-07-20",
+    "is_first_time_offender": true,
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "765a3c3f-7625-4ba1-afc0-c29dd0d311a5",
+    "prisoner_id": "PRIS-2026-00055",
+    "charges": [
+      {
+        "act": "POCSO",
+        "section": "3",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2026-04-20",
+    "is_first_time_offender": true,
+    "state": "Gujarat",
+    "district": "Ahmedabad",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "81315829-494e-4de4-8d05-853ee7a5c397",
+    "prisoner_id": "PRIS-2026-00056",
+    "charges": [
+      {
+        "act": "IT_Act",
+        "section": "66C",
+        "offense_category": "cyber_crimes",
+        "is_compoundable": false,
+        "max_sentence_months": 24
+      }
+    ],
+    "custody_start_date": "2024-03-16",
+    "is_first_time_offender": false,
+    "state": "Tamil Nadu",
+    "district": "Chennai",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "9a2a4fd1-6b69-41d0-a83a-5c20b558bd7a",
+    "prisoner_id": "PRIS-2026-00057",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2025-09-23",
+    "is_first_time_offender": true,
+    "state": "Telangana",
+    "district": "Nizamabad",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "b4cde55f-9588-4a85-a44d-c29c4b11e244",
+    "prisoner_id": "PRIS-2026-00058",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      },
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2025-07-11",
+    "is_first_time_offender": false,
+    "state": "Gujarat",
+    "district": "Vadodara",
+    "case_stage": "bail_applied",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "02253f09-9eea-4fb7-a9da-7350b2cf0383",
+    "prisoner_id": "PRIS-2026-00059",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "498A",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": true,
+        "max_sentence_months": 36
+      },
+      {
+        "act": "IPC",
+        "section": "420",
+        "offense_category": "economic_offences",
+        "is_compoundable": false,
+        "max_sentence_months": 84
+      }
+    ],
+    "custody_start_date": "2025-03-28",
+    "is_first_time_offender": false,
+    "state": "Madhya Pradesh",
+    "district": "Jabalpur",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "26af049e-42fe-4a77-9dfe-2f96bbdee6ef",
+    "prisoner_id": "PRIS-2026-00060",
+    "charges": [
+      {
+        "act": "PMLA",
+        "section": "4",
+        "offense_category": "economic_offences",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2023-07-20",
+    "is_first_time_offender": true,
+    "state": "Gujarat",
+    "district": "Surat",
+    "case_stage": "bail_granted",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "d777de64-fd4f-4365-9909-fbcb13ded78b",
+    "prisoner_id": "PRIS-2026-00061",
+    "charges": [
+      {
+        "act": "IT_Act",
+        "section": "66E",
+        "offense_category": "cyber_crimes",
+        "is_compoundable": false,
+        "max_sentence_months": 24
+      }
+    ],
+    "custody_start_date": "2024-12-05",
+    "is_first_time_offender": false,
+    "state": "Telangana",
+    "district": "Hyderabad",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "fac0afb3-aac0-4dc8-9b51-5143dbd813a9",
+    "prisoner_id": "PRIS-2026-00062",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "406",
+        "offense_category": "economic_offences",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      },
+      {
+        "act": "SC_ST_Act",
+        "section": "4",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 72
+      }
+    ],
+    "custody_start_date": "2023-01-21",
+    "is_first_time_offender": true,
+    "state": "Uttar Pradesh",
+    "district": "Varanasi",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "b9d898bc-644a-4b2d-858f-2cf85f3fd573",
+    "prisoner_id": "PRIS-2026-00063",
+    "charges": [
+      {
+        "act": "POCSO",
+        "section": "4",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2025-03-26",
+    "is_first_time_offender": false,
+    "state": "Punjab",
+    "district": "Amritsar",
+    "case_stage": "bail_granted",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "41c800bf-c46b-48da-a54c-b5c8391b9b05",
+    "prisoner_id": "PRIS-2026-00064",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "307",
+        "offense_category": "general",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      },
+      {
+        "act": "IPC",
+        "section": "336",
+        "offense_category": "general",
+        "is_compoundable": true,
+        "max_sentence_months": 12
+      }
+    ],
+    "custody_start_date": "2025-01-30",
+    "is_first_time_offender": false,
+    "state": "Uttar Pradesh",
+    "district": "Lucknow",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "919929bb-0932-4eea-afca-231a8e0af1c4",
+    "prisoner_id": "PRIS-2026-00065",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "153A",
+        "offense_category": "offences_against_state",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2025-04-09",
+    "is_first_time_offender": true,
+    "state": "Uttar Pradesh",
+    "district": "Agra",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "89cdbd4f-0261-4171-bad0-2ac800178b0b",
+    "prisoner_id": "PRIS-2026-00066",
+    "charges": [
+      {
+        "act": "SC_ST_Act",
+        "section": "4",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 72
+      },
+      {
+        "act": "POCSO",
+        "section": "3",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2025-12-04",
+    "is_first_time_offender": false,
+    "state": "Uttar Pradesh",
+    "district": "Lucknow",
+    "case_stage": "bail_applied",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "5e6fde92-0fbc-47ab-b901-8a470563263a",
+    "prisoner_id": "PRIS-2026-00067",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "376",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2025-11-23",
+    "is_first_time_offender": false,
+    "state": "Punjab",
+    "district": "Ludhiana",
+    "case_stage": "bail_applied",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "6e14c504-c635-4ee5-bbed-9422ad08b272",
+    "prisoner_id": "PRIS-2026-00068",
+    "charges": [
+      {
+        "act": "POCSO",
+        "section": "4",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      },
+      {
+        "act": "SC_ST_Act",
+        "section": "3",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2026-07-12",
+    "is_first_time_offender": true,
+    "state": "Gujarat",
+    "district": "Ahmedabad",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "11272e5c-43c0-48fa-8f41-feb96e85eda0",
+    "prisoner_id": "PRIS-2026-00069",
+    "charges": [
+      {
+        "act": "IT_Act",
+        "section": "66C",
+        "offense_category": "cyber_crimes",
+        "is_compoundable": false,
+        "max_sentence_months": 24
+      }
+    ],
+    "custody_start_date": "2024-08-17",
+    "is_first_time_offender": true,
+    "state": "Maharashtra",
+    "district": "Nagpur",
+    "case_stage": "bail_granted",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "e1daa7f6-e1d9-4414-8e6e-818f8b51ea41",
+    "prisoner_id": "PRIS-2026-00070",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "153A",
+        "offense_category": "offences_against_state",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      },
+      {
+        "act": "SC_ST_Act",
+        "section": "3",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2026-07-01",
+    "is_first_time_offender": false,
+    "state": "Uttar Pradesh",
+    "district": "Lucknow",
+    "case_stage": "bail_applied",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "15d68111-7a0b-44d8-a3b7-e7e3f4a9f147",
+    "prisoner_id": "PRIS-2026-00071",
+    "charges": [
+      {
+        "act": "POCSO",
+        "section": "4",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2026-05-22",
+    "is_first_time_offender": true,
+    "state": "Karnataka",
+    "district": "Kolar",
+    "case_stage": "bail_granted",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "4a716820-ce04-45d7-b5d2-b59b79e004da",
+    "prisoner_id": "PRIS-2026-00072",
+    "charges": [
+      {
+        "act": "SC_ST_Act",
+        "section": "4",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 72
+      }
+    ],
+    "custody_start_date": "2026-02-20",
+    "is_first_time_offender": true,
+    "state": "Haryana",
+    "district": "Faridabad",
+    "case_stage": "bail_granted",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "e8e7bb07-8941-46e2-97fe-f70c6e90a737",
+    "prisoner_id": "PRIS-2026-00073",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2025-03-05",
+    "is_first_time_offender": true,
+    "state": "Maharashtra",
+    "district": "Aurangabad",
+    "case_stage": "bail_granted",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "457a2ec7-f89f-4b8a-9c25-09bd04b94539",
+    "prisoner_id": "PRIS-2026-00074",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2025-05-25",
+    "is_first_time_offender": true,
+    "state": "Punjab",
+    "district": "Ludhiana",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "80fff563-eaea-473e-8456-465ce555ca82",
+    "prisoner_id": "PRIS-2026-00075",
+    "charges": [
+      {
+        "act": "POCSO",
+        "section": "3",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2025-06-26",
+    "is_first_time_offender": false,
+    "state": "Tamil Nadu",
+    "district": "Madurai",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "6c389280-d526-4eca-8ac0-f442274ee4f4",
+    "prisoner_id": "PRIS-2026-00076",
+    "charges": [
+      {
+        "act": "SC_ST_Act",
+        "section": "4",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 72
+      }
+    ],
+    "custody_start_date": "2023-07-12",
+    "is_first_time_offender": true,
+    "state": "West Bengal",
+    "district": "Howrah",
+    "case_stage": "bail_granted",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "2c635d40-774f-4bbe-be8b-1ef5e6b8d059",
+    "prisoner_id": "PRIS-2026-00077",
+    "charges": [
+      {
+        "act": "SC_ST_Act",
+        "section": "4",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 72
+      }
+    ],
+    "custody_start_date": "2025-11-30",
+    "is_first_time_offender": false,
+    "state": "Maharashtra",
+    "district": "Nagpur",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "6bbf5e36-53ad-447d-8a04-b34824e3f81b",
+    "prisoner_id": "PRIS-2026-00078",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      },
+      {
+        "act": "IPC",
+        "section": "406",
+        "offense_category": "economic_offences",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2025-12-15",
+    "is_first_time_offender": true,
+    "state": "West Bengal",
+    "district": "Kolkata",
+    "case_stage": "bail_granted",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "56f7bac1-1af5-45d2-af1a-642a291ea14c",
+    "prisoner_id": "PRIS-2026-00079",
+    "charges": [
+      {
+        "act": "SC_ST_Act",
+        "section": "4",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 72
+      },
+      {
+        "act": "IPC",
+        "section": "307",
+        "offense_category": "general",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2026-03-13",
+    "is_first_time_offender": true,
+    "state": "Maharashtra",
+    "district": "Pune",
+    "case_stage": "bail_granted",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "6016b36a-68d3-40cc-bade-c396bfc74ac0",
+    "prisoner_id": "PRIS-2026-00080",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "420",
+        "offense_category": "economic_offences",
+        "is_compoundable": false,
+        "max_sentence_months": 84
+      }
+    ],
+    "custody_start_date": "2026-04-28",
+    "is_first_time_offender": false,
+    "state": "Uttar Pradesh",
+    "district": "Lucknow",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "5b693082-7ee0-4c85-be66-6052c969a3e1",
+    "prisoner_id": "PRIS-2026-00081",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "498A",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": true,
+        "max_sentence_months": 36
+      }
+    ],
+    "custody_start_date": "2025-05-23",
+    "is_first_time_offender": true,
+    "state": "Telangana",
+    "district": "Nizamabad",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "14853bb9-99e1-49ff-aca7-55fd8a805ceb",
+    "prisoner_id": "PRIS-2026-00082",
+    "charges": [
+      {
+        "act": "IT_Act",
+        "section": "66E",
+        "offense_category": "cyber_crimes",
+        "is_compoundable": false,
+        "max_sentence_months": 24
+      }
+    ],
+    "custody_start_date": "2026-06-18",
+    "is_first_time_offender": false,
+    "state": "Gujarat",
+    "district": "Surat",
+    "case_stage": "bail_applied",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "ba643c2c-ff9d-4fa0-9da6-7050e71897a5",
+    "prisoner_id": "PRIS-2026-00083",
+    "charges": [
+      {
+        "act": "SC_ST_Act",
+        "section": "3",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      },
+      {
+        "act": "POCSO",
+        "section": "4",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2026-08-08",
+    "is_first_time_offender": false,
+    "state": "Telangana",
+    "district": "Warangal",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "7c503842-d679-419c-9092-acee3f952489",
+    "prisoner_id": "PRIS-2026-00084",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "121",
+        "offense_category": "offences_against_state",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      },
+      {
+        "act": "IPC",
+        "section": "376",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2025-05-30",
+    "is_first_time_offender": true,
+    "state": "Telangana",
+    "district": "Nizamabad",
+    "case_stage": "bail_granted",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "8cecbe4d-1a78-41e4-8362-b724077db52f",
+    "prisoner_id": "PRIS-2026-00085",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "498A",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": true,
+        "max_sentence_months": 36
+      }
+    ],
+    "custody_start_date": "2026-06-28",
+    "is_first_time_offender": false,
+    "state": "Delhi",
+    "district": "New Delhi",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "d2d33b7f-4f33-4de6-ac47-046a90dca6a8",
+    "prisoner_id": "PRIS-2026-00086",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "154",
+        "offense_category": "crimes_against_foreigners",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      },
+      {
+        "act": "IPC",
+        "section": "498A",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": true,
+        "max_sentence_months": 36
+      }
+    ],
+    "custody_start_date": "2024-03-13",
+    "is_first_time_offender": false,
+    "state": "Delhi",
+    "district": "New Delhi",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "b497df10-9324-43e7-9cab-cfe53570500c",
+    "prisoner_id": "PRIS-2026-00087",
+    "charges": [
+      {
+        "act": "POCSO",
+        "section": "3",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2026-02-17",
+    "is_first_time_offender": false,
+    "state": "Uttar Pradesh",
+    "district": "Lucknow",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "ce43ebe6-50bd-4164-9d52-949eb714ce39",
+    "prisoner_id": "PRIS-2026-00088",
+    "charges": [
+      {
+        "act": "SC_ST_Act",
+        "section": "4",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 72
+      }
+    ],
+    "custody_start_date": "2022-12-20",
+    "is_first_time_offender": true,
+    "state": "Uttar Pradesh",
+    "district": "Varanasi",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "3434ca19-4c26-4d41-9864-b2bc35d4c505",
+    "prisoner_id": "PRIS-2026-00089",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "121",
+        "offense_category": "offences_against_state",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      },
+      {
+        "act": "POCSO",
+        "section": "3",
+        "offense_category": "crimes_against_children",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2026-06-08",
+    "is_first_time_offender": true,
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "case_stage": "bail_applied",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "62b22a1b-a238-4894-afd8-89f6aa6dd6f3",
+    "prisoner_id": "PRIS-2026-00090",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "336",
+        "offense_category": "general",
+        "is_compoundable": true,
+        "max_sentence_months": 12
+      }
+    ],
+    "custody_start_date": "2026-05-05",
+    "is_first_time_offender": true,
+    "state": "Delhi",
+    "district": "North Delhi",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "6aa67ee1-7d93-4380-8bf2-1ea61f2af67b",
+    "prisoner_id": "PRIS-2026-00091",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "406",
+        "offense_category": "economic_offences",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      },
+      {
+        "act": "IPC",
+        "section": "498A",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": true,
+        "max_sentence_months": 36
+      }
+    ],
+    "custody_start_date": "2025-03-12",
+    "is_first_time_offender": true,
+    "state": "Maharashtra",
+    "district": "Pune",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "cce22f70-d582-4eab-bbbe-7a7125c39a7b",
+    "prisoner_id": "PRIS-2026-00092",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "121",
+        "offense_category": "offences_against_state",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2026-03-21",
+    "is_first_time_offender": true,
+    "state": "Maharashtra",
+    "district": "Pune",
+    "case_stage": "bail_applied",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "86f89a32-65f6-40f5-87fb-0713063d4fd2",
+    "prisoner_id": "PRIS-2026-00093",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "406",
+        "offense_category": "economic_offences",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2024-12-07",
+    "is_first_time_offender": true,
+    "state": "Tamil Nadu",
+    "district": "Coimbatore",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "77f08146-4c6f-4b09-98b7-f83acae32b58",
+    "prisoner_id": "PRIS-2026-00094",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "307",
+        "offense_category": "general",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2024-11-15",
+    "is_first_time_offender": true,
+    "state": "West Bengal",
+    "district": "Kolkata",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "67c934e7-588d-4603-8cac-f5e5556b2e3b",
+    "prisoner_id": "PRIS-2026-00095",
+    "charges": [
+      {
+        "act": "SC_ST_Act",
+        "section": "3",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2023-06-07",
+    "is_first_time_offender": true,
+    "state": "Rajasthan",
+    "district": "Jodhpur",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "ed858370-02d2-425f-8b50-45c598b613e1",
+    "prisoner_id": "PRIS-2026-00096",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "153A",
+        "offense_category": "offences_against_state",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2025-09-16",
+    "is_first_time_offender": true,
+    "state": "Tamil Nadu",
+    "district": "Madurai",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "05396279-f18b-49c4-afe2-bac12c32ebbd",
+    "prisoner_id": "PRIS-2026-00097",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "376",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2026-06-21",
+    "is_first_time_offender": true,
+    "state": "Rajasthan",
+    "district": "Jodhpur",
+    "case_stage": "bail_granted",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "145a0acc-115a-4b9a-946b-81601b33bd91",
+    "prisoner_id": "PRIS-2026-00098",
+    "charges": [
+      {
+        "act": "SC_ST_Act",
+        "section": "3",
+        "offense_category": "crimes_against_sc_st",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2025-10-25",
+    "is_first_time_offender": true,
+    "state": "Uttar Pradesh",
+    "district": "Varanasi",
+    "case_stage": "under_trial",
+    "has_legal_aid": false,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "c289768b-940c-4b51-88c3-dc1ce91a793b",
+    "prisoner_id": "PRIS-2026-00099",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "153A",
+        "offense_category": "offences_against_state",
+        "is_compoundable": false,
+        "max_sentence_months": 60
+      }
+    ],
+    "custody_start_date": "2025-11-29",
+    "is_first_time_offender": true,
+    "state": "Karnataka",
+    "district": "Kolar",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  },
+  {
+    "_data_label": "SYNTHETIC \u2014 not real prisoner data",
+    "case_id": "b8ddaadc-1872-4cc8-91f7-219f92ced487",
+    "prisoner_id": "PRIS-2026-00100",
+    "charges": [
+      {
+        "act": "IPC",
+        "section": "498A",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": true,
+        "max_sentence_months": 36
+      },
+      {
+        "act": "IPC",
+        "section": "376",
+        "offense_category": "crimes_against_women",
+        "is_compoundable": false,
+        "max_sentence_months": 120
+      }
+    ],
+    "custody_start_date": "2026-03-20",
+    "is_first_time_offender": true,
+    "state": "Rajasthan",
+    "district": "Jaipur",
+    "case_stage": "under_trial",
+    "has_legal_aid": true,
+    "created_at": "2026-08-15T03:47:54Z",
+    "updated_at": "2026-08-15T03:47:54Z"
+  }
+]

@@ -1,221 +1,30 @@
-from datetime import datetime, timezone
-import time
-import uuid
-import jwt
-import requests
-
-from fastapi import APIRouter, Header, HTTPException
-from sqlalchemy import create_engine, select
-from sqlalchemy.orm import Session, selectinload
-
-from config import DATABASE_URL, TRUST_SERVICE_URL, TRUST_SERVICE_TOKEN, JWT_SECRET
+from fastapi import APIRouter
 from logic import determine_eligibility
-from models import Base, CaseRecord
-from schemas import EligibilityCheckRequest, EligibilityOverrideRequest
 
 router = APIRouter()
-engine_kwargs = {"pool_pre_ping": True}
-if DATABASE_URL.startswith("postgresql"):
-    engine_kwargs["connect_args"] = {"connect_timeout": 3}
-engine = create_engine(DATABASE_URL, **engine_kwargs)
 
-
-def initialize_database():
-    try:
-        Base.metadata.create_all(engine)
-    except Exception as exc:
-        # The container may start before Postgres is ready; requests will
-        # report the database error, while the process remains healthy.
-        print(f"[database WARNING] initialization failed: {exc}")
-
-# Results and overrides are intentionally kept separately: an override never
-# replaces the deterministic computed result.
-LAST_RESULTS: dict[str, dict] = {}
-OVERRIDES: dict[str, list[dict]] = {}
-
-def log_action(
-    case_id: str,
-    actor_user_id: str,
-    actor_role: str,
-    action_type: str,
-    action_payload: dict,
-    authorization: str | None = None,
-):
-    payload = {
-        "case_id": case_id,
-        "actor_user_id": actor_user_id,
-        "actor_role": actor_role,
-        "action_type": action_type,
-        "action_payload": action_payload,
-        "timestamp": datetime.now(timezone.utc)
-        .isoformat(timespec="seconds")
-        .replace("+00:00", "Z"),
-    }
-
-    token = authorization or (
-        f"Bearer {TRUST_SERVICE_TOKEN}"
-        if TRUST_SERVICE_TOKEN
-        else None
-    )
-
-    headers = {"Authorization": token} if token else {}
-
-    try:
-        response = requests.post(
-            f"{TRUST_SERVICE_URL}/api/v1/audit/log",
-            json=payload,
-            headers=headers,
-            timeout=3,
-        )
-
-        if response.status_code >= 400:
-            print(
-                f"[audit-log WARNING] trust service returned "
-                f"{response.status_code}: {response.text}"
-            )
-    except Exception as exc:
-        print(f"[audit-log WARNING] failed to log action: {exc}")
-
-def internal_audit_token() -> str:
-    return jwt.encode(
-        {
-            "user_id": str(uuid.uuid5(uuid.NAMESPACE_DNS, "eligibility-engine")),
-            "role": "admin",
-            "exp": int(time.time()) + 300,
-        },
-        JWT_SECRET,
-        algorithm="HS256",
-    )
-
-def envelope(data=None, error=None):
-    return {"success": error is None, "data": data, "error": error}
-
-
-def find_case(case_id: str):
-    with Session(engine) as session:
-        return session.scalar(
-            select(CaseRecord)
-            .options(selectinload(CaseRecord.offense_records))
-            .where(CaseRecord.case_id == case_id)
-        )
+# TODO: replace this in-memory placeholder with a real DB lookup by case_id
+MOCK_CASES = {}
 
 
 @router.post("/api/v1/eligibility/check")
-def check_eligibility(payload: EligibilityCheckRequest):
-    case = find_case(payload.case_id)
-    if case is None:
-        raise HTTPException(status_code=404, detail="Case not found")
-    charges = [
-        {
-            "act": offense.act,
-            "section": offense.section,
-            "offense_category": offense.offense_category,
-            "is_compoundable": offense.is_compoundable,
-            "max_sentence_months": offense.max_sentence_months,
-        }
-        for offense in case.offense_records
-    ]
-    result = determine_eligibility(
-        case.case_id,
-        case.custody_start_date.date().isoformat(),
-        bool(case.is_first_time_offender),
-        charges,
-    )
-    result["case_version"] = case.version
-    LAST_RESULTS[payload.case_id] = result
-    log_action(
-    payload.case_id,
-    "service-eligibility-engine",
-    "admin",
-    "eligibility_check",
-    result,
-    f'Bearer {internal_audit_token()}',
-)
-    return envelope(result)
-
-
-@router.get("/api/v1/eligibility/cases")
-def list_cases():
-    """
-    Real case directory, replacing the frontend's client-side mockRoster.js.
-    prisoner_id currently doubles as the display name (see seed_cases.py
-    NOTE) - a dedicated prisoner_name/photo_url column is the next step,
-    not required to make this endpoint real today.
-    """
-    with Session(engine) as session:
-        cases = session.scalars(
-            select(CaseRecord).options(selectinload(CaseRecord.offense_records))
-        ).all()
-        data = [
-            {
-                "case_id": c.case_id,
-                "name": c.prisoner_id,
-                "offense": ", ".join(
-                    f"{o.act} {o.section}" for o in c.offense_records
-                ) or "Not yet linked",
-                "case_stage": c.case_stage,
-                "is_compoundable": any(o.is_compoundable for o in c.offense_records),
-            }
-            for c in cases
-        ]
-    return envelope(data)
+def check_eligibility(payload: dict):
+    case_id = payload["case_id"]
+    case = MOCK_CASES.get(case_id, {
+        "custody_start_date": "2025-06-01", "is_first_time_offender": False,
+        "charges": [{"max_sentence_months": 24}],
+    })
+    result = determine_eligibility(case_id, case["custody_start_date"],
+                                    case["is_first_time_offender"], case["charges"])
+    return {"success": True, "data": result, "error": None}
 
 
 @router.get("/api/v1/eligibility/{case_id}")
 def get_eligibility(case_id: str):
-    result = LAST_RESULTS.get(case_id)
-    if result is None:
-        raise HTTPException(status_code=404, detail="No computed eligibility result")
-    return envelope(result)
+    return check_eligibility({"case_id": case_id})
 
 
 @router.post("/api/v1/eligibility/override")
-def override_eligibility(
-    payload: EligibilityOverrideRequest,
-    x_actor_role: str | None = Header(default=None),
-    authorization: str | None = Header(default=None),):
-    if x_actor_role not in {"legal_aid", "judge"}:
-        raise HTTPException(status_code=403, detail="Only legal_aid or judge may override")
-    if payload.case_id not in LAST_RESULTS:
-        raise HTTPException(status_code=404, detail="No computed eligibility result")
-
-    case = find_case(payload.case_id)
-    if case is None:
-        raise HTTPException(status_code=404, detail="Case not found")
-
-    if payload.expected_version is not None and payload.expected_version != case.version:
-        raise HTTPException(
-            status_code=409,
-            detail=(
-                f"Case has been modified since you loaded it "
-                f"(expected version {payload.expected_version}, current version {case.version}). "
-                f"Reload the case before recording a decision."
-            ),
-        )
-
-    with Session(engine) as session:
-        db_case = session.get(CaseRecord, payload.case_id)
-        db_case.version += 1
-        db_case.updated_at = datetime.now(timezone.utc)
-        session.commit()
-        new_version = db_case.version
-
-    override = {
-        "case_id": payload.case_id,
-        "actor_user_id": payload.actor_user_id,
-        "actor_role": x_actor_role,
-        "reason": payload.reason,
-        "reviewed_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
-    }
-    OVERRIDES.setdefault(payload.case_id, []).append(override)
-    log_action(
-    payload.case_id,
-    payload.actor_user_id,
-    x_actor_role,
-    "manual_override",
-    override,
-    authorization,
-)
-    return envelope({"computed_result": LAST_RESULTS[payload.case_id],
-                     "override": override, "new_version": new_version})
-
+def override_eligibility(payload: dict):
+    return {"success": True, "data": {"case_id": payload.get("case_id"),
+            "overridden": True, "reason": payload.get("reason")}, "error": None}

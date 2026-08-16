@@ -1,13 +1,43 @@
-fastapi
-uvicorn
-celery
-redis
-sqlalchemy
-psycopg2-binary
-pydantic
-pytest
-python-dotenv
-requests
-pandas
+# requirements.txt
 
-PyJWT
+# Web Framework
+fastapi==0.104.1              # Modern Python web framework
+uvicorn[standard]==0.24.0     # ASGI server for FastAPI
+
+# Database
+sqlalchemy==2.0.23            # ORM for database operations
+psycopg2-binary==2.9.9        # PostgreSQL adapter
+alembic==1.12.1               # Database migrations
+
+# Validation & Serialization
+pydantic==2.5.0               # Data validation using Python type hints
+pydantic-settings==2.1.0      # Environment variable management
+
+# Task Queue
+celery==5.3.4                 # Async task processing
+redis==5.0.1                  # Redis client
+
+# HTTP Requests
+httpx==0.25.2                 # Async HTTP client
+requests==2.31.0              # Sync HTTP client
+
+# Notifications
+twilio==8.10.0                # SMS notifications (Twilio API)
+
+# Logging & Monitoring
+python-json-logger==2.0.7     # JSON structured logging
+prometheus-client==0.19.0     # Prometheus metrics
+
+# Configuration Management
+python-dotenv==1.0.0          # Load environment variables from .env
+
+# Testing
+pytest==7.4.3                 # Testing framework
+pytest-asyncio==0.21.1        # Async test support
+pytest-cov==4.1.0             # Code coverage reporting
+httpx-mock==0.30.0            # Mock HTTP responses
+
+# Development Tools
+black==23.12.0                # Code formatter
+flake8==6.1.0                 # Linter
+mypy==1.7.1                   # Type checker

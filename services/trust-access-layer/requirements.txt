@@ -3,8 +3,7 @@ uvicorn
 sqlalchemy
 psycopg2-binary
 pydantic
-pyjwt==2.8.0
-bcrypt<4.0.0
+pyjwt
 passlib[bcrypt]
 pytest
 python-dotenv
